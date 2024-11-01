@@ -9,7 +9,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,18 +39,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="36dp"
-                android:textSize="30sp"
-                android:text="@string/app_name" />
+                android:fontFamily="@font/open_sans_font"
+                android:text="@string/app_name"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/splashDescriptionTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
+                android:fontFamily="@font/open_sans_font"
                 android:text="@string/kisisel_dil_ogrenme_rehberiniz" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/loadingPointImageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -55,6 +60,20 @@
                 android:src="@drawable/loading_points" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/letsStartButton"
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/hadi_baslayalim"
+            android:backgroundTint="@color/app_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
