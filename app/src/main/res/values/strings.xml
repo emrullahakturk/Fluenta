@@ -6,4 +6,8 @@
     <string name="kisisel_dil_ogrenme_rehberiniz">Kişisel dil öğrenme rehberiniz.</string>
     <string name="loading_bar">loading_bar</string>
     <string name="hadi_baslayalim">Hadi Başlayalım!</string>
+    <string name="quote_logo">quote_logo</string>
+    <string name="socrates_quote">“There is only one good, knowledge, and one evil, ignorance.”</string>
+    <string name="socrates">─ Socrates</string>
+    <string name="quote_fab_button">quote fragment forward</string>
 </resources>

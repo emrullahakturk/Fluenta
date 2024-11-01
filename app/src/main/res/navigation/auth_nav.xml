@@ -2,10 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/auth_nav"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/quoteFragment">
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.SplashFragment"
         android:label="SplashFragment" />
+    <fragment
+        android:id="@+id/quoteFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.QuoteFragment"
+        android:label="QuoteFragment" />
 </navigation>
