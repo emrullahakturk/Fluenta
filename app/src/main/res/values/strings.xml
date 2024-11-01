@@ -10,4 +10,9 @@
     <string name="socrates_quote">“There is only one good, knowledge, and one evil, ignorance.”</string>
     <string name="socrates">─ Socrates</string>
     <string name="quote_fab_button">quote fragment forward</string>
+    <string name="fluenta_slogan">Fluenta ile öğren, akıcı konuş.</string>
+    <string name="kaydol">Kaydol</string>
+    <string name="hesabim_var">Zaten bir hesabım var.</string>
+    <string name="giris_yap">Giriş Yap</string>
+    <string name="welcome_hello_logo">welcome_hello_logo</string>
 </resources>
