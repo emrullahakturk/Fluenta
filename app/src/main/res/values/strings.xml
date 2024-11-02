@@ -3,29 +3,32 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="app_logo">app_logo</string>
-    <string name="kisisel_dil_ogrenme_rehberiniz">Kişisel dil öğrenme rehberiniz.</string>
+    <string name="your_personal_language_tutor">Kişisel dil öğrenme rehberiniz.</string>
     <string name="loading_bar">loading_bar</string>
-    <string name="hadi_baslayalim">Hadi Başlayalım!</string>
+    <string name="lets_start">Hadi Başlayalım!</string>
     <string name="quote_logo">quote_logo</string>
     <string name="socrates_quote">“There is only one good, knowledge, and one evil, ignorance.”</string>
     <string name="socrates">─ Socrates</string>
     <string name="quote_fab_button">quote fragment forward</string>
     <string name="fluenta_slogan">Fluenta ile öğren, akıcı konuş.</string>
-    <string name="kaydol">Kaydol</string>
-    <string name="hesabim_var">Zaten bir hesabım var.</string>
-    <string name="giris_yap">Giriş Yap</string>
+    <string name="already_have_account">Zaten bir hesabım var.</string>
+    <string name="you_dont_have_account">Bir hesabınız yok mu ?</string>
     <string name="welcome_hello_logo">welcome_hello_logo</string>
     <string name="sign_up_and_learn">Kaydol ve hayalindeki dili öğrenmeye başla.</string>
+    <string name="log_in_and_learn">Giriş yap ve öğrenmeye devam et.</string>
     <string name="e_mail">E-mail</string>
     <string name="user_gmail_com">kullanici@gmail.com</string>
     <string name="continue_str">Continue</string>
     <string name="register">Kayıt Ol</string>
+    <string name="login">Giriş Yap</string>
     <string name="privacy_policy">Katılarak, Şartlar ve Gizlilik Politikası\'nı okuduğunuzu ve kabul ettiğinizi beyan edersiniz.</string>
     <string name="or">or</string>
     <string name="arrow_back_image_view">arrowBackImageView</string>
     <string name="hello_logo_welcome">hello_logo_welcome</string>
     <string name="apple_icon">apple_icon</string>
     <string name="sign_up_with_apple">Apple ile kaydol</string>
+    <string name="log_in_with_apple">Apple ile giriş yap</string>
     <string name="google_icon">google_icon</string>
     <string name="sign_up_with_google">Google ile kaydol</string>
+    <string name="log_in_with_google">Google ile giriş yap</string>
 </resources>

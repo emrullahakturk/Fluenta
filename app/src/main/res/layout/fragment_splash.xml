@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
                 android:fontFamily="@font/open_sans_font"
-                android:text="@string/kisisel_dil_ogrenme_rehberiniz" />
+                android:text="@string/your_personal_language_tutor" />
 
             <ImageView
                 android:id="@+id/loadingPointImageView"
@@ -69,7 +69,7 @@
             android:layout_marginLeft="30dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="@string/hadi_baslayalim"
+            android:text="@string/lets_start"
             android:backgroundTint="@color/app_blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
