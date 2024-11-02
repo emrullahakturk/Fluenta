@@ -23,13 +23,13 @@
         android:label="WelcomeFragment" >
         <action
             android:id="@+id/welcomeToSignUp"
-            app:destination="@id/singUpFragment" />
+            app:destination="@id/loginToSignUp" />
         <action
             android:id="@+id/welcomeToLogin"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/singUpFragment"
+        android:id="@+id/loginToSignUp"
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.SingUpFragment"
         android:label="SingUpFragment" />
     <fragment
@@ -39,6 +39,9 @@
         <action
             android:id="@+id/loginToPassword"
             app:destination="@id/passwordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_singUpFragment"
+            app:destination="@id/loginToSignUp" />
     </fragment>
     <fragment
         android:id="@+id/passwordFragment"
