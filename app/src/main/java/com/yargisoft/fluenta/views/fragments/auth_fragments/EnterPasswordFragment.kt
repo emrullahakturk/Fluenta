@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.yargisoft.fluenta.R
-import com.yargisoft.fluenta.databinding.FragmentPasswordBinding
+import com.yargisoft.fluenta.databinding.FragmentEnterPasswordBinding
 
 
 class EnterPasswordFragment : Fragment() {
 
-    private lateinit var binding : FragmentPasswordBinding
+    private lateinit var binding : FragmentEnterPasswordBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
