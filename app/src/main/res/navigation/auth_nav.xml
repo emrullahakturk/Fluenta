@@ -31,7 +31,11 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.SingUpFragment"
-        android:label="SingUpFragment" />
+        android:label="SingUpFragment" >
+        <action
+            android:id="@+id/signUpToUsername"
+            app:destination="@id/usernameFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.LoginFragment"
@@ -59,4 +63,16 @@
         android:id="@+id/resetPasswordFragment"
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.ResetPasswordFragment"
         android:label="ResetPasswordFragment" />
+    <fragment
+        android:id="@+id/usernameFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.UsernameFragment"
+        android:label="UsernameFragment" >
+        <action
+            android:id="@+id/usernameToCreatePassword"
+            app:destination="@id/createPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPasswordFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.CreatePasswordFragment"
+        android:label="CreatePasswordFragment" />
 </navigation>
