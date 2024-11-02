@@ -34,4 +34,6 @@
     <string name="log_in_with_google">Google ile giriş yap</string>
     <string name="enter_password">Lütfen parolanızı giriniz:</string>
     <string name="forgot_password">Şifrenizi mi unuttunuz ?</string>
+    <string name="enter_your_email">Enter your e-mail to reset password</string>
+    <string name="reset_password">Reset Password</string>
 </resources>
