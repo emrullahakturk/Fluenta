@@ -67,9 +67,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="#F5F5F5"
+                android:backgroundTint="@color/text_input_gray"
                 android:hint="@string/e_mail"
-                app:boxBackgroundColor="#F5F5F5"
+                app:boxBackgroundColor="@color/text_input_gray"
                 app:boxCornerRadiusBottomEnd="15dp"
                 app:boxCornerRadiusBottomStart="15dp"
                 app:boxCornerRadiusTopEnd="15dp"
@@ -123,7 +123,7 @@
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
-                    android:background="#D3D3D3" />
+                    android:background="@color/line_gray" />
 
                 <!-- "or" Metni -->
                 <TextView
@@ -132,7 +132,7 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/or"
-                    android:textColor="#D3D3D3"
+                    android:textColor="@color/line_gray"
                     android:textSize="14sp" />
 
                 <!-- Sağ Çizgi -->
@@ -140,7 +140,7 @@
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
-                    android:background="#D3D3D3" />
+                    android:background="@color/line_gray" />
 
             </LinearLayout>
 

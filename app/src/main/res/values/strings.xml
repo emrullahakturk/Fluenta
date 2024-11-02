@@ -17,6 +17,7 @@
     <string name="sign_up_and_learn">Kaydol ve hayalindeki dili öğrenmeye başla.</string>
     <string name="log_in_and_learn">Giriş yap ve öğrenmeye devam et.</string>
     <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
     <string name="user_gmail_com">kullanici@gmail.com</string>
     <string name="continue_str">Continue</string>
     <string name="register">Kayıt Ol</string>
@@ -31,4 +32,6 @@
     <string name="google_icon">google_icon</string>
     <string name="sign_up_with_google">Google ile kaydol</string>
     <string name="log_in_with_google">Google ile giriş yap</string>
+    <string name="enter_password">Lütfen parolanızı giriniz:</string>
+    <string name="forgot_password">Şifrenizi mi unuttunuz ?</string>
 </resources>

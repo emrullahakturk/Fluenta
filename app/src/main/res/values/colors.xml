@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="app_blue">#007AFF</color>
     <color name="button_turquoise">#E5F2FF</color>
+    <color name="text_input_gray">#F5F5F5</color>
+    <color name="line_gray">#D3D3D3</color>
 </resources>
