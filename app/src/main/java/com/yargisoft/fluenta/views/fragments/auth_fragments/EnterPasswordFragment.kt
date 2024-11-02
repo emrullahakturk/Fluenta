@@ -11,7 +11,7 @@ import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.databinding.FragmentPasswordBinding
 
 
-class PasswordFragment : Fragment() {
+class EnterPasswordFragment : Fragment() {
 
     private lateinit var binding : FragmentPasswordBinding
 
@@ -20,7 +20,7 @@ class PasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View{
 
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_password, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_enter_password, container, false)
 
         binding.forgotPasswordTv.setOnClickListener {
             findNavController().navigate(R.id.passwordToResetPassword)

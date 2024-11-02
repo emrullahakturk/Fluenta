@@ -34,6 +34,7 @@
     <string name="google_icon">google_icon</string>
     <string name="sign_up_with_google">Google ile kaydol</string>
     <string name="log_in_with_google">Google ile giriş yap</string>
+    <string name="create_password">Lütfen parolanızı oluşturun:</string>
     <string name="enter_password">Lütfen parolanızı giriniz:</string>
     <string name="enter_username">Lütfen kullanıcı adınızı giriniz:</string>
     <string name="forgot_password">Şifrenizi mi unuttunuz ?</string>
