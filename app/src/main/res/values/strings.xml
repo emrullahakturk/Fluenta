@@ -15,4 +15,17 @@
     <string name="hesabim_var">Zaten bir hesabım var.</string>
     <string name="giris_yap">Giriş Yap</string>
     <string name="welcome_hello_logo">welcome_hello_logo</string>
+    <string name="sign_up_and_learn">Kaydol ve hayalindeki dili öğrenmeye başla.</string>
+    <string name="e_mail">E-mail</string>
+    <string name="user_gmail_com">kullanici@gmail.com</string>
+    <string name="continue_str">Continue</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="privacy_policy">Katılarak, Şartlar ve Gizlilik Politikası\'nı okuduğunuzu ve kabul ettiğinizi beyan edersiniz.</string>
+    <string name="or">or</string>
+    <string name="arrow_back_image_view">arrowBackImageView</string>
+    <string name="hello_logo_welcome">hello_logo_welcome</string>
+    <string name="apple_icon">apple_icon</string>
+    <string name="sign_up_with_apple">Apple ile kaydol</string>
+    <string name="google_icon">google_icon</string>
+    <string name="sign_up_with_google">Google ile kaydol</string>
 </resources>
