@@ -40,4 +40,6 @@
     <string name="forgot_password">Şifrenizi mi unuttunuz ?</string>
     <string name="enter_your_email">Enter your e-mail to reset password</string>
     <string name="reset_password">Reset Password</string>
+    <string name="password_rules"><![CDATA[En az 8 karakter içeren güçlü bir şifre oluşturun. Büyük harf, küçük harf, sayı ve !@#$%^&*() gibi özel semboller içerebilir.]]></string>
+    <string name="username_rules">Benzersiz bir kullanıcı adı oluşturun. Büyük ve küçük harfler kullanabilir, 0 ile 9 arasındaki rakamları, alt çizgi (_) ve tire (-) ekleyebilirsiniz.</string>
 </resources>
