@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.databinding.FragmentWelcomeBinding
 
@@ -23,6 +24,13 @@ class WelcomeFragment : Fragment() {
         //Giriş yap textini altı çizili konuma getirdik
         binding.loginTv.paintFlags =  Paint.UNDERLINE_TEXT_FLAG
 
+        binding.signUpButton.setOnClickListener {
+            findNavController().navigate(R.id.welcomeToSignUp)
+        }
+
+        binding.loginTv.setOnClickListener {
+            findNavController().navigate(R.id.welcomeToLogin)
+        }
 
         return binding.root
     }
