@@ -54,8 +54,6 @@ captures/
 .idea/.name
 .idea/tasks.xml
 .idea/.gitignore
-*.java
-*.kt
 
 # Proguard
 proguard/
