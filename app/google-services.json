@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "487357086704",
+    "project_id": "fluenta-5ab18",
+    "storage_bucket": "fluenta-5ab18.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487357086704:android:b27446ca14339d87e17b35",
+        "android_client_info": {
+          "package_name": "com.yargisoft.fluenta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHqi5KHWcCyDOBRylxN8AXxI8gzNV4hJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

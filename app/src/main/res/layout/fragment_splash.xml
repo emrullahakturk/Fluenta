@@ -1,80 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <data>
-
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/white">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/appNameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5">
+            android:layout_gravity="center"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/open_sans_font"
+            android:text="@string/app_name"
+            android:textSize="30sp" />
 
-            <ImageView
-                android:id="@+id/logoImageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/app_logo"
-                android:src="@drawable/logo" />
-
-            <TextView
-                android:id="@+id/appNameTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="36dp"
-                android:fontFamily="@font/open_sans_font"
-                android:text="@string/app_name"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/splashDescriptionTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:fontFamily="@font/open_sans_font"
-                android:text="@string/your_personal_language_tutor" />
-
-            <ImageView
-                android:id="@+id/loadingPointImageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/loading_bar"
-                android:src="@drawable/loading_points" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/letsStartButton"
-            android:layout_width="match_parent"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+        <TextView
+            android:id="@+id/splashDescriptionTv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="@string/lets_start"
-            android:backgroundTint="@color/app_blue"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/open_sans_font"
+            android:text="@string/your_personal_language_tutor" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+        <ImageView
+            android:id="@+id/loadingPointImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/loading_bar"
+            android:src="@drawable/loading_points" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/letsStartButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/app_blue"
+        android:text="@string/lets_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
