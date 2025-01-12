@@ -1,15 +1,68 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Android-specific
+.gradle/
+build/
 local.properties
+*.iml
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/misc.xml
+.idea/dictionaries/
+.idea/gradle.xml
+.idea/vcs.xml
+*.apk
+*.ap_
+*.dex
+*.class
+*.so
+*.jar
+*.war
+*.ear
+*.db
+*.db-journal
+*.keystore
+*.jks
+output.json
+captures/
+.externalNativeBuild/
+
+# Kotlin-specific
+*.ktlint
+
+# Gradle
+!gradle-wrapper.jar
+.gradle/cache/
+.gradle/cache/*
+.gradle/daemon/
+.gradle/daemon/*
+.gradle/init-scripts/
+.gradle/init-scripts/*
+.gradle/notifications/
+.gradle/notifications/*
+.gradle/wrapper/
+.gradle/wrapper/*
+.gradle/gradle.properties
+
+# IntelliJ IDEA
+*.ipr
+*.iws
+*.idea/
+.idea/*.iml
+.idea/.name
+.idea/tasks.xml
+.idea/.gitignore
+*.java
+*.kt
+
+# Proguard
+proguard/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
