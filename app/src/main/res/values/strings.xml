@@ -43,4 +43,5 @@
     <string name="password_rules"><![CDATA[En az 8 karakter içeren güçlü bir şifre oluşturun. Büyük harf, küçük harf, sayı ve !@#$%^&*() gibi özel semboller içerebilir.]]></string>
     <string name="username_rules">Benzersiz bir kullanıcı adı oluşturun. Büyük ve küçük harfler kullanabilir, 0 ile 9 arasındaki rakamları, alt çizgi (_) ve tire (-) ekleyebilirsiniz.</string>
     <string name="name_surname">Name Surname</string>
+    <string name="sifremi_unuttum">Şifremi Unuttum</string>
 </resources>

@@ -52,6 +52,9 @@
         <action
             android:id="@+id/loginToQuote"
             app:destination="@id/quoteFragment" />
+        <action
+            android:id="@+id/loginToResetPassword"
+            app:destination="@id/resetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"

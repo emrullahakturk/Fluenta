@@ -40,6 +40,13 @@ class LoginFragment : Fragment() {
             viewModel.login(email, password)
         }
 
+        binding.arrowBackImageView.setOnClickListener {
+            findNavController().popBackStack()
+        }
+        binding.forgotPasswordTv.setOnClickListener {
+            findNavController().navigate(R.id.loginToResetPassword)
+        }
+
         observeViewModel()
     }
 

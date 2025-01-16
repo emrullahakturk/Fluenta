@@ -26,10 +26,6 @@ class SplashFragment  @Inject constructor(): Fragment() {
 
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
-        binding.letsStartButton.setOnClickListener {
-            findNavController().navigate(R.id.splashToWelcome)
-        }
-
         return binding.root
 
     }
