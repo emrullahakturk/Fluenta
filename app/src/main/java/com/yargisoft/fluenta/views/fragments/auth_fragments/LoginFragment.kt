@@ -46,6 +46,9 @@ class LoginFragment : Fragment() {
         binding.forgotPasswordTv.setOnClickListener {
             findNavController().navigate(R.id.loginToResetPassword)
         }
+        binding.signUpTv.setOnClickListener {
+            findNavController().navigate(R.id.loginToSignUp)
+        }
 
         observeViewModel()
     }
