@@ -42,6 +42,12 @@ class SingUpFragment @Inject constructor() : Fragment() {
             val password = binding.passwordEditText.text.toString()
             viewModel.register(fullName, email, password)
         }
+        binding.arrowBackImageView.setOnClickListener{
+            findNavController().popBackStack()
+        }
+        binding.loginTv.setOnClickListener {
+            findNavController().navigate(R.id.signUpToLogin)
+        }
 
         observeViewModel()
     }
