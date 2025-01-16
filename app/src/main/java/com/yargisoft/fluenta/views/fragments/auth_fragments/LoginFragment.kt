@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.databinding.FragmentLoginBinding
@@ -21,6 +22,9 @@ class LoginFragment : Fragment() {
     private val viewModel: AuthViewModel by viewModels()
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+    private val navOptions = NavOptions.Builder()
+        .setPopUpTo(R.id.splashFragment, inclusive = true)
+        .build()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,7 +67,8 @@ class LoginFragment : Fragment() {
             result.onSuccess {
                 Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
                 // Giriş başarılı olduğunda bir sonraki ekrana yönlendirme
-                findNavController().navigate(R.id.loginToQuote)
+                findNavController().navigate(R.id.loginToQuote, null, navOptions)
+
             }
             result.onFailure { error ->
                 Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()

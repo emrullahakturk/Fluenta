@@ -86,12 +86,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
+            app:startIconDrawable="@drawable/ic_mail"
             app:layout_constraintTop_toBottomOf="@+id/loginAndLearnTv">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"  />
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:paddingStart="44dp"
+                android:paddingEnd="0dp"
+                android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -103,6 +108,7 @@
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/text_input_gray"
             android:hint="@string/password"
+            app:endIconMode="password_toggle"
             app:boxBackgroundColor="@color/text_input_gray"
             app:boxCornerRadiusBottomEnd="15dp"
             app:boxCornerRadiusBottomStart="15dp"
@@ -111,12 +117,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
+            app:startIconDrawable="@drawable/ic_lock"
             app:layout_constraintTop_toBottomOf="@+id/emailTextInput">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"  />
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:paddingStart="44dp"
+                android:paddingEnd="0dp"
+                android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
