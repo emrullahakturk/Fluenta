@@ -17,8 +17,8 @@
     <string name="sign_up_and_learn">Kaydol ve hayalindeki dili öğrenmeye başla.</string>
     <string name="log_in_and_learn">Giriş yap ve öğrenmeye devam et.</string>
     <string name="e_mail">E-mail</string>
-    <string name="password">Password</string>
-    <string name="username">Username</string>
+    <string name="password">Şifre</string>
+    <string name="username">Kullanıcı Adı</string>
     <string name="go_forward">İlerle</string>
     <string name="user_gmail_com">kullanici@gmail.com</string>
     <string name="continue_str">Continue</string>
@@ -42,7 +42,7 @@
     <string name="reset_password">Reset Password</string>
     <string name="password_rules"><![CDATA[En az 8 karakter içeren güçlü bir şifre oluşturun. Büyük harf, küçük harf, sayı ve !@#$%^&*() gibi özel semboller içerebilir.]]></string>
     <string name="username_rules">Benzersiz bir kullanıcı adı oluşturun. Büyük ve küçük harfler kullanabilir, 0 ile 9 arasındaki rakamları, alt çizgi (_) ve tire (-) ekleyebilirsiniz.</string>
-    <string name="name_surname">Name Surname</string>
+    <string name="name_surname">Ad Soyad</string>
     <string name="sifremi_unuttum">Şifremi Unuttum</string>
     <string name="enter_mail_adress">Şifre sıfırlama bağlantısı için mail adresinizi giriniz</string>
 </resources>
