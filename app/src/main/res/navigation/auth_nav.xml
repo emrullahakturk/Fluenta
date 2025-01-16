@@ -59,7 +59,11 @@
     <fragment
         android:id="@+id/resetPasswordFragment"
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.ResetPasswordFragment"
-        android:label="ResetPasswordFragment" />
+        android:label="ResetPasswordFragment" >
+        <action
+            android:id="@+id/resetToLogin"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/usernameFragment"
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.UsernameFragment"

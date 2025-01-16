@@ -22,7 +22,10 @@ class AuthRepository @Inject constructor(
                     .build()
             )?.await()
 
-            Result.success("Kayıt başarılı!")
+            // E-posta doğrulama gönder
+            user?.sendEmailVerification()?.await()
+
+            Result.success("Kayıt başarılı! E-posta adresinizi doğrulamak için lütfen gelen kutunuzu kontrol edin.")
         } catch (e: FirebaseAuthException) {
             Result.failure(Exception(mapFirebaseError(e)))
         } catch (e: Exception) {
@@ -32,12 +35,44 @@ class AuthRepository @Inject constructor(
 
     suspend fun loginUser(email: String, password: String): Result<String> {
         return try {
-            firebaseAuth.signInWithEmailAndPassword(email, password).await()
-            Result.success("Giriş başarılı!")
+            val result = firebaseAuth.signInWithEmailAndPassword(email, password).await()
+            val user = result.user
+
+            if (user != null && !user.isEmailVerified) {
+                resendVerificationEmail()
+                Result.failure(Exception("E-posta adresiniz doğrulanmamış. Lütfen doğrulama işlemini tamamlayın."))
+            } else {
+                Result.success("Giriş başarılı!")
+            }
         } catch (e: FirebaseAuthException) {
             Result.failure(Exception(mapFirebaseError(e)))
         } catch (e: Exception) {
             Result.failure(e)
+        }
+    }
+
+    private suspend fun resendVerificationEmail(): Result<String> {
+        return try {
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                user.sendEmailVerification().await()
+                Result.success("Doğrulama e-postası başarıyla gönderildi.")
+            } else {
+                Result.failure(Exception("Kullanıcı oturumu yok."))
+            }
+        } catch (e: Exception) {
+            Result.failure(Exception("Doğrulama e-postası gönderilemedi: ${e.message}"))
+        }
+    }
+
+    suspend fun resetPassword(email: String): Result<String> {
+        return try {
+            firebaseAuth.sendPasswordResetEmail(email).await()
+            Result.success("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.")
+        } catch (e: FirebaseAuthException) {
+            Result.failure(Exception(mapFirebaseError(e)))
+        } catch (e: Exception) {
+            Result.failure(Exception("Şifre sıfırlama bağlantısı gönderilemedi: ${e.message}"))
         }
     }
 
