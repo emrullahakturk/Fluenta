@@ -12,6 +12,9 @@
         <action
             android:id="@+id/splashToWelcome"
             app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/splashToQuote"
+            app:destination="@id/quoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/quoteFragment"

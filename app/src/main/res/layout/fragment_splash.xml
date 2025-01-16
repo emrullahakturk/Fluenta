@@ -43,28 +43,18 @@
             android:fontFamily="@font/open_sans_font"
             android:text="@string/your_personal_language_tutor" />
 
-        <ImageView
-            android:id="@+id/loadingPointImageView"
+        <com.airbnb.lottie.LottieAnimationView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:contentDescription="@string/loading_bar"
-            android:src="@drawable/loading_points" />
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/three_dots">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/letsStartButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/app_blue"
-        android:text="@string/lets_start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

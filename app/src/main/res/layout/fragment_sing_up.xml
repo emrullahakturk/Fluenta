@@ -162,7 +162,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextInput" />
 
-        <LinearLayout
+      <!--  <LinearLayout
             android:id="@+id/orLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -176,14 +176,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registerButton">
 
-            <!-- Sol Çizgi -->
+            &lt;!&ndash; Sol Çizgi &ndash;&gt;
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1"
                 android:background="#D3D3D3" />
 
-            <!-- "or" Metni -->
+            &lt;!&ndash; "or" Metni &ndash;&gt;
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
                 android:textColor="#D3D3D3"
                 android:textSize="14sp" />
 
-            <!-- Sağ Çizgi -->
+            &lt;!&ndash; Sağ Çizgi &ndash;&gt;
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -220,7 +220,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/orLinearLayout">
 
-            <!-- Apple Icon -->
+            &lt;!&ndash; Apple Icon &ndash;&gt;
             <ImageView
                 android:id="@+id/apple_icon"
                 android:layout_width="24dp"
@@ -229,7 +229,7 @@
                 android:contentDescription="@string/apple_icon"
                 android:src="@drawable/apple_icon" />
 
-            <!-- Button Text -->
+            &lt;!&ndash; Button Text &ndash;&gt;
             <TextView
                 android:id="@+id/apple_button_text"
                 android:layout_width="wrap_content"
@@ -260,7 +260,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signUpApple">
 
-            <!-- Apple Icon -->
+            &lt;!&ndash; Apple Icon &ndash;&gt;
             <ImageView
                 android:id="@+id/google_icon"
                 android:layout_width="24dp"
@@ -269,7 +269,7 @@
                 android:contentDescription="@string/google_icon"
                 android:src="@drawable/google_icon" />
 
-            <!-- Button Text -->
+            &lt;!&ndash; Button Text &ndash;&gt;
             <TextView
                 android:id="@+id/signUpGoogleTv"
                 android:layout_width="wrap_content"
@@ -280,7 +280,7 @@
                 android:text="@string/sign_up_with_google"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
-        </LinearLayout>
+        </LinearLayout>-->
 
         <TextView
             android:id="@+id/privacyAndPolicyTv"
@@ -294,7 +294,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpGoogle" />
+            app:layout_constraintTop_toBottomOf="@+id/registerButton" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
