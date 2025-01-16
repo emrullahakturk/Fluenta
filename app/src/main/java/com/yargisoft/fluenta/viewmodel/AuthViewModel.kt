@@ -21,6 +21,10 @@ class AuthViewModel @Inject constructor() : ViewModel() {
     private val _registerResult = MutableLiveData<Result<String>>()
     val registerResult: LiveData<Result<String>> get() = _registerResult
 
+
+    private val _loginResult = MutableLiveData<Result<String>>()
+    val loginResult: LiveData<Result<String>> get() = _loginResult
+
     fun register(fullName: String, email: String, password: String) {
         if (fullName.isBlank()) {
             _registerResult.value = Result.failure(Exception("Ad ve soyad alanı boş olamaz!"))
@@ -39,6 +43,26 @@ class AuthViewModel @Inject constructor() : ViewModel() {
         viewModelScope.launch {
             val result = authRepository.registerUser(email, password, fullName)
             _registerResult.value = result
+            _loading.value = false
+        }
+    }
+
+
+
+    fun login(email: String, password: String) {
+        if (!isValidEmail(email)) {
+            _loginResult.value = Result.failure(Exception("Geçersiz e-posta!"))
+            return
+        }
+        if (password.isBlank()) {
+            _loginResult.value = Result.failure(Exception("Şifre alanı boş olamaz!"))
+            return
+        }
+
+        _loading.value = true
+        viewModelScope.launch {
+            val result = authRepository.loginUser(email, password)
+            _loginResult.value = result
             _loading.value = false
         }
     }

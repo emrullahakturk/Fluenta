@@ -30,13 +30,28 @@ class AuthRepository @Inject constructor(
         }
     }
 
+    suspend fun loginUser(email: String, password: String): Result<String> {
+        return try {
+            firebaseAuth.signInWithEmailAndPassword(email, password).await()
+            Result.success("Giriş başarılı!")
+        } catch (e: FirebaseAuthException) {
+            Result.failure(Exception(mapFirebaseError(e)))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+
     private fun mapFirebaseError(exception: FirebaseAuthException): String {
         return when (exception.errorCode) {
             "ERROR_EMAIL_ALREADY_IN_USE" -> "Bu e-posta zaten kullanılıyor."
             "ERROR_WEAK_PASSWORD" -> "Şifre çok zayıf. Lütfen daha güçlü bir şifre kullanın."
             "ERROR_INVALID_EMAIL" -> "Geçersiz bir e-posta adresi girdiniz."
             "ERROR_NETWORK_REQUEST_FAILED" -> "İnternet bağlantınızı kontrol edin."
-            else -> "Bir hata oluştu: ${exception.message}"
+            "ERROR_USER_NOT_FOUND" -> "Bu e-posta ile kayıtlı bir kullanıcı bulunamadı."
+            "ERROR_WRONG_PASSWORD" -> "Hatalı şifre girdiniz. Lütfen tekrar deneyin."
+            "ERROR_USER_DISABLED" -> "Hesabınız devre dışı bırakılmış. Destek ekibiyle iletişime geçin."
+            else -> "Bir hata oluştu: E-postanızı ve şifrenizi tekrar kontrol ediniz."
         }
     }
 }

@@ -44,22 +44,10 @@
         android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/loginToPassword"
-            app:destination="@id/passwordFragment" />
-        <action
             android:id="@+id/loginToSignUp"
             app:destination="@id/signUpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/passwordFragment"
-        android:name="com.yargisoft.fluenta.views.fragments.auth_fragments.EnterPasswordFragment"
-        android:label="fragment_password"
-        tools:layout="@layout/fragment_enter_password" >
         <action
-            android:id="@+id/passwordToResetPassword"
-            app:destination="@id/resetPasswordFragment" />
-        <action
-            android:id="@+id/passwordToQuote"
+            android:id="@+id/loginToQuote"
             app:destination="@id/quoteFragment" />
     </fragment>
     <fragment
