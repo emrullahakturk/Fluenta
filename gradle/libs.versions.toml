@@ -7,15 +7,16 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.9.3"
+activity = "1.10.0"
 constraintlayout = "2.2.0"
 navigationFragmentKtx = "2.8.5"
 navigationUiKtx = "2.8.5"
 hilt = "2.51.1"
 kotlin = "1.9.10"
 ksp = "1.9.10-1.0.13"
-firebaseAuthKtx = "23.1.0" # KSP'nin uygun sürümü
+firebaseAuthKtx = "23.1.0"
 lottie= "6.5.2"
+room = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,10 +34,15 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
-lottie = "com.airbnb.android:lottie:6.5.2"
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
 
 [plugins]
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 android = { id = "com.android.application", version.ref = "androidApp" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+androidx-room = { id = "androidx.room", version = "room" }
