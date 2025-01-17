@@ -1,4 +1,4 @@
-package com.yargisoft.fluenta.data.module
+package com.yargisoft.fluenta.di.module
 
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module

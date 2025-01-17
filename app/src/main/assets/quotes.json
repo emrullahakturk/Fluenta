@@ -1,0 +1,395 @@
+ [
+    {
+      "author": "Socrates",
+      "quote": "There is only one good, knowledge, and one evil, ignorance"
+    },
+    {
+      "author": "Aristotle",
+      "quote": "It is the mark of an educated mind to be able to entertain a thought without accepting it."
+    },
+    {
+      "author": "Plato",
+      "quote": "Wise men speak because they have something to say; fools because they have to say something."
+    },
+    {
+      "author": "Confucius",
+      "quote": "It does not matter how slowly you go as long as you do not stop."
+    },
+    {
+      "author": "Marcus Aurelius",
+      "quote": "You have power over your mind - not outside events. Realize this, and you will find strength."
+    },
+    {
+      "author": "Lao Tzu",
+      "quote": "The journey of a thousand miles begins with one step."
+    },
+    {
+      "author": "Epictetus",
+      "quote": "Happiness and freedom begin with a clear understanding of one principle: Some things are within our control, and some things are not."
+    },
+    {
+      "author": "Albert Einstein",
+      "quote": "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world."
+    },
+    {
+      "author": "Rene Descartes",
+      "quote": "I think, therefore I am."
+    },
+    {
+      "author": "Immanuel Kant",
+      "quote": "Science is organized knowledge. Wisdom is organized life."
+    },
+    {
+      "author": "Blaise Pascal",
+      "quote": "All men's miseries derive from not being able to sit in a quiet room alone."
+    },
+    {
+      "author": "Bertrand Russell",
+      "quote": "The good life is one inspired by love and guided by knowledge."
+    },
+    {
+      "author": "Friedrich Nietzsche",
+      "quote": "He who has a why to live can bear almost any how."
+    },
+    {
+      "author": "John Stuart Mill",
+      "quote": "Genius can only breathe freely in an atmosphere of freedom."
+    },
+    {
+      "author": "Voltaire",
+      "quote": "I disapprove of what you say, but I will defend to the death your right to say it."
+    },
+    {
+      "author": "Jean-Jacques Rousseau",
+      "quote": "Man is born free, and everywhere he is in chains."
+    },
+    {
+      "author": "John Locke",
+      "quote": "No man's knowledge here can go beyond his experience."
+    },
+    {
+      "author": "David Hume",
+      "quote": "A wise man proportions his belief to the evidence."
+    },
+    {
+      "author": "Thomas Aquinas",
+      "quote": "Better to illuminate than merely to shine, to deliver to others contemplated truths than merely to contemplate."
+    },
+    {
+      "author": "Augustine of Hippo",
+      "quote": "Faith is to believe what you do not see; the reward of this faith is to see what you believe."
+    },
+    {
+      "author": "John Dewey",
+      "quote": "Education is not preparation for life; education is life itself."
+    },
+    {
+      "author": "William James",
+      "quote": "The art of being wise is the art of knowing what to overlook."
+    },
+    {
+      "author": "Søren Kierkegaard",
+      "quote": "Life can only be understood backwards; but it must be lived forwards."
+    },
+    {
+      "author": "Hannah Arendt",
+      "quote": "The sad truth is that most evil is done by people who never make up their minds to be good or evil."
+    },
+    {
+      "author": "Simone de Beauvoir",
+      "quote": "One is not born, but rather becomes, a woman."
+    },
+    {
+      "author": "Karl Marx",
+      "quote": "History repeats itself, first as tragedy, second as farce."
+    },
+    {
+      "author": "Heraclitus",
+      "quote": "You cannot step into the same river twice."
+    },
+    {
+      "author": "Pythagoras",
+      "quote": "The oldest, shortest words—yes and no—are those which require the most thought."
+    },
+    {
+      "author": "Epicurus",
+      "quote": "The art of living well and the art of dying well are one."
+    },
+    {
+      "author": "Cicero",
+      "quote": "A room without books is like a body without a soul."
+    },
+    {
+      "author": "Diogenes",
+      "quote": "He has the most who is most content with the least."
+    },
+    {
+      "author": "Seneca",
+      "quote": "Luck is what happens when preparation meets opportunity."
+    },
+    {
+      "author": "Marcus Tullius Cicero",
+      "quote": "Gratitude is not only the greatest of virtues, but the parent of all the others."
+    },
+    {
+      "author": "Zeno of Citium",
+      "quote": "Well-being is attained little by little, and nevertheless is no little thing itself."
+    },
+    {
+      "author": "Boethius",
+      "quote": "Contemplate the extent and stability of the heavens, and then at last cease to admire worthless things."
+    },
+    {
+      "author": "Anaxagoras",
+      "quote": "The purpose of life is the investigation of the Sun, the Moon, and the heavens."
+    },
+    {
+      "author": "Parmenides",
+      "quote": "For thinking and being are one and the same."
+    },
+    {
+      "author": "Thales of Miletus",
+      "quote": "The most difficult thing in life is to know yourself."
+    },
+    {
+      "author": "Xenophanes",
+      "quote": "The gods did not reveal from the beginning all things to us; but in the course of time, through seeking, we may learn and know things better."
+    },
+    {
+      "author": "Democritus",
+      "quote": "Happiness resides not in possessions, and not in gold, happiness dwells in the soul."
+    },
+    {
+      "author": "Protagoras",
+      "quote": "Man is the measure of all things: of things which are, that they are, and of things which are not, that they are not."
+    },
+    {
+      "author": "Plutarch",
+      "quote": "The mind is not a vessel to be filled but a fire to be kindled."
+    },
+    {
+      "author": "Plotinus",
+      "quote": "Knowledge, if it does not determine action, is dead to us."
+    },
+    {
+      "author": "Hypatia",
+      "quote": "Reserve your right to think, for even to think wrongly is better than not to think at all."
+    },
+    {
+      "author": "Avicenna",
+      "quote": "The world is divided into men who have wit and no religion and men who have religion and no wit."
+    },
+    {
+      "author": "Maimonides",
+      "quote": "The risk of a wrong decision is preferable to the terror of indecision."
+    },
+    {
+      "author": "Al-Farabi",
+      "quote": "A goal which is impossible to attain is a useless goal; it is merely a dream."
+    },
+    {
+      "author": "Ibn Khaldun",
+      "quote": "History is a record of human societies, of the changes that they went through, and of the revolutions that took place in them."
+    },
+    {
+      "author": "Baruch Spinoza",
+      "quote": "The highest activity a human being can attain is learning for understanding, because to understand is to be free."
+    },
+    {
+      "author": "Gottfried Wilhelm Leibniz",
+      "quote": "It is the knowledge of necessary and eternal truths that distinguishes us from mere animals."
+    },
+    {
+      "author": "Edmund Burke",
+      "quote": "The only thing necessary for the triumph of evil is for good men to do nothing."
+    },
+    {
+      "author": "Jeremy Bentham",
+      "quote": "The greatest happiness of the greatest number is the foundation of morals and legislation."
+    },
+    {
+      "author": "Francis Bacon",
+      "quote": "Knowledge is power."
+    },
+    {
+      "author": "Thomas Hobbes",
+      "quote": "The condition of man... is a condition of war of everyone against everyone."
+    },
+    {
+      "author": "John Locke",
+      "quote": "New opinions are always suspected, and usually opposed, without any other reason but because they are not already common."
+    },
+    {
+      "author": "Jean-Jacques Rousseau",
+      "quote": "The world of reality has its limits; the world of imagination is boundless."
+    },
+    {
+      "author": "Immanuel Kant",
+      "quote": "Out of the crooked timber of humanity, no straight thing was ever made."
+    },
+    {
+      "author": "Friedrich Nietzsche",
+      "quote": "The individual has always had to struggle to keep from being overwhelmed by the tribe. If you try it, you will be lonely often, and sometimes frightened. But no price is too high to pay for the privilege of owning yourself."
+    },
+    {
+      "author": "Karl Marx",
+      "quote": "The philosophers have only interpreted the world, in various ways. The point, however, is to change it."
+    },
+    {
+      "author": "Bertrand Russell",
+      "quote": "To conquer fear is the beginning of wisdom."
+    },
+    {
+      "author": "Ludwig Wittgenstein",
+      "quote": "The limits of my language mean the limits of my world."
+    },
+    {
+      "author": "Martin Heidegger",
+      "quote": "Language is the house of Being. In its home man dwells."
+    },
+    {
+      "author": "Hannah Arendt",
+      "quote": "The most radical revolutionary will become a conservative the day after the revolution."
+    },
+    {
+      "author": "Simone de Beauvoir",
+      "quote": "Life is occupied in both perpetuating itself and surpassing itself; if all it does is maintain itself, then living is only not dying."
+    },
+    {
+      "author": "Jean-Paul Sartre",
+      "quote": "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does."
+    },
+    {
+      "author": "Albert Camus",
+      "quote": "In the depth of winter, I finally learned that within me there lay an invincible summer."
+    },
+    {
+      "author": "Michel Foucault",
+      "quote": "I don’t write a book so that it will be the final word; I write a book so that other books are possible, not necessarily written by me."
+    },
+    {
+      "author": "Jacques Derrida",
+      "quote": "Every sign, linguistic or non-linguistic, spoken or written (in the usual sense of this opposition), as small or as large as you like, can be cited, put between quotation marks; thereby it can break with every given context, engendering an infinity of new contexts in a manner which is absolutely illimitable."
+    },
+    {
+      "author": "Alain Badiou",
+      "quote": "To think about politics today is to think about the production of new political forms; it is to think about new forms of the collective organization of life."
+    },
+    {
+      "author": "Slavoj Žižek",
+      "quote": "If you have reasons to love someone, you don’t love them."
+    },
+    {
+      "author": "Judith Butler",
+      "quote": "We are not simply speaking beings, but also acted on beings."
+    },
+    {
+      "author": "Alfred North Whitehead",
+      "quote": "The art of progress is to preserve order amid change and to preserve change amid order."
+    },
+    {
+      "author": "Henri Bergson",
+      "quote": "To exist is to change, to change is to mature, to mature is to go on creating oneself endlessly."
+    },
+    {
+      "author": "Maurice Merleau-Ponty",
+      "quote": "The world is not what I think, but what I live through."
+    },
+    {
+      "author": "Gilles Deleuze",
+      "quote": "A concept is a brick. It can be used to build a courthouse of reason. Or it can be thrown through the window."
+    },
+    {
+      "author": "Alasdair MacIntyre",
+      "quote": "I can only answer the question “What am I to do?” if I can answer the prior question “Of what story or stories do I find myself a part?”"
+    },
+    {
+      "author": "Iris Murdoch",
+      "quote": "The world can only be grasped by action, not by contemplation. The hand is the cutting edge of the mind."
+    },
+    {
+      "author": "Herman Dooyeweerd",
+      "quote": "Philosophy does not have to be abstruse, abstruse does not have to be incomprehensible, and incomprehensible is not necessarily profound."
+    },
+    {
+      "author": "Jürgen Habermas",
+      "quote": "The survival of democracy depends on the ability of a critical public to use its reason."
+    },
+    {
+      "author": "Michael Oakeshott",
+      "quote": "In political activity, then, men sail a boundless and bottomless sea: there is neither harbor for shelter nor floor for anchorage, neither starting-place nor appointed destination."
+    },
+    {
+      "author": "Alasdair MacIntyre",
+      "quote": "Modern politics is civil war carried on by other means."
+    },
+    {
+      "author": "Bernard Williams",
+      "quote": "We live forward, but we understand backwards. In other words, we live in a continual sense of risk and uncertainty about the present and future, and it is only when things have gone wrong, when the risks have turned out badly, that we may begin to understand what the risks were and what went wrong."
+    },
+    {
+      "author": "Hannah Arendt",
+      "quote": "The essence of politics is freedom, but freedom is not just the absence of constraints—it is the capacity to act in concert with others."
+    },
+    {
+      "author": "Simone Weil",
+      "quote": "The root of human life is a spiritual necessity that no earthly reality can satisfy."
+    },
+    {
+      "author": "Ernst Cassirer",
+      "quote": "Man cannot escape his own achievement. He will always be dominated by his own art."
+    },
+    {
+      "author": "Martin Buber",
+      "quote": "All real living is meeting."
+    },
+    {
+      "author": "Hans-Georg Gadamer",
+      "quote": "History does not belong to us; we belong to it."
+    },
+    {
+      "author": "Paul Ricoeur",
+      "quote": "To be human is to be vulnerable to both history and narrative."
+    },
+    {
+      "author": "John Rawls",
+      "quote": "Justice is the first virtue of social institutions, as truth is of systems of thought."
+    },
+    {
+      "author": "Ronald Dworkin",
+      "quote": "Equality is the sovereign virtue, the one in whose name all other values are to be examined."
+    },
+    {
+      "author": "Robert Nozick",
+      "quote": "Individuals have rights, and there are things no person or group may do to them (without violating their rights)."
+    },
+    {
+      "author": "Amartya Sen",
+      "quote": "Development can be seen as a process of expanding the real freedoms that people enjoy."
+    },
+    {
+      "author": "Martha Nussbaum",
+      "quote": "A human being who has never been subjected to cruelty, who has never been made to think, “I am nothing,” is a privileged being."
+    },
+    {
+      "author": "Richard Rorty",
+      "quote": "Truth is what your contemporaries let you get away with."
+    },
+    {
+      "author": "Richard Posner",
+      "quote": "We should think of the judge not as a legislator manqué, but as a lawyer set apart by his training and knowledge of the law."
+    },
+    {
+      "author": "Cornel West",
+      "quote": "Justice is what love looks like in public."
+    },
+    {
+      "author": "Angela Davis",
+      "quote": "I am no longer accepting the things I cannot change. I am changing the things I cannot accept."
+    },
+    {
+      "author": "bell hooks",
+      "quote": "Feminism is for everybody: not just for women. It’s about eliminating injustice."
+    }
+  ]
+
