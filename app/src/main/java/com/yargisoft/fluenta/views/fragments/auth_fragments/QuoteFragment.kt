@@ -1,5 +1,6 @@
 package com.yargisoft.fluenta.views.fragments.auth_fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.yargisoft.fluenta.databinding.FragmentQuoteBinding
 import com.yargisoft.fluenta.viewmodel.QuoteViewModel
+import com.yargisoft.fluenta.views.activities.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -48,6 +50,10 @@ class QuoteFragment : Fragment() {
             }
         }
 
+        binding.goForwardFab.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
