@@ -17,18 +17,18 @@ object AppModule {
     @Singleton
     fun provideMainPageItems(): List<MainPageMenuItem> {
         return listOf(
-            MainPageMenuItem("Option 1", R.drawable.oxford_a1),
-            MainPageMenuItem("Option 1", R.drawable.most_common_c1_c2),
-            MainPageMenuItem("Option 1", R.drawable.most_common_phrases),
-            MainPageMenuItem("Option 1", R.drawable.listen_and_learn),
-            MainPageMenuItem("Option 1", R.drawable.ai_tutor),
-            MainPageMenuItem("Option 1", R.drawable.translator),
-            MainPageMenuItem("Option 1", R.drawable.favorites),
-            MainPageMenuItem("Option 1", R.drawable.upgrade_pro),
-            MainPageMenuItem("Option 1", R.drawable.account),
-            MainPageMenuItem("Option 1", R.drawable.settings),
-            MainPageMenuItem("Option 1", R.drawable.feedback),
-            MainPageMenuItem("Option 1", R.drawable.about_us),
+            MainPageMenuItem("main_to_oxford", R.drawable.oxford_a1),
+            MainPageMenuItem("main_to_c1_c2", R.drawable.most_common_c1_c2),
+            MainPageMenuItem("main_to_most_common_phrases", R.drawable.most_common_phrases),
+            MainPageMenuItem("main_to_listen_and_learn", R.drawable.listen_and_learn),
+            MainPageMenuItem("main_to_ai_tutor", R.drawable.ai_tutor),
+            MainPageMenuItem("main_to_translator", R.drawable.translator),
+            MainPageMenuItem("main_to_favorites", R.drawable.favorites),
+            MainPageMenuItem("main_to_upgrade_pro", R.drawable.upgrade_pro),
+            MainPageMenuItem("main_to_my_account", R.drawable.account),
+            MainPageMenuItem("main_to_settings", R.drawable.settings),
+            MainPageMenuItem("main_to_feedback", R.drawable.feedback),
+            MainPageMenuItem("main_to_about_us", R.drawable.about_us),
         )
     }
 

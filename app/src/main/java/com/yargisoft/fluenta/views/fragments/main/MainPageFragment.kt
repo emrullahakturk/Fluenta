@@ -44,7 +44,7 @@ class MainPageFragment @Inject constructor() : Fragment() {
             viewModel.mainPageItems.collect { items ->
                 adapter.updateData(items) { item ->
                     // Tıklama olayları burada ele alınacak
-                    Toast.makeText(requireContext(), "Item clicked ${item.title}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Item clicked ${item.destination}", Toast.LENGTH_SHORT).show()
                 }
             }
         }
