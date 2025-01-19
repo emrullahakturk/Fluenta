@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.google.gson.Gson
 import com.yargisoft.fluenta.data.model.DatabaseInitializer
 import com.yargisoft.fluenta.data.model.FluentaDatabase
+import com.yargisoft.fluenta.data.model.OxfordWordDao
 import com.yargisoft.fluenta.data.model.QuoteDao
 import dagger.Module
 import dagger.Provides
@@ -31,11 +32,15 @@ object DatabaseModule {
     fun provideQuoteDao(database: FluentaDatabase): QuoteDao {
         return database.quoteDao()
     }
+    @Provides
+    fun provideOxfordWordDao(database: FluentaDatabase): OxfordWordDao {
+        return database.oxfordWordDao()
+    }
 
     @Provides
     @Singleton
-    fun provideDatabaseInitializer(@ApplicationContext  context: Context, dao: QuoteDao): DatabaseInitializer {
-        return DatabaseInitializer(context, dao)
+    fun provideDatabaseInitializer(@ApplicationContext  context: Context, quoteDao: QuoteDao, oxfordWordDao: OxfordWordDao): DatabaseInitializer {
+        return DatabaseInitializer(context, quoteDao,oxfordWordDao)
     }
 
 }
