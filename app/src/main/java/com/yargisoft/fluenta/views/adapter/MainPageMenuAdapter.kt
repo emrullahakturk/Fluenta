@@ -16,7 +16,7 @@ class MainPageMenuAdapter @Inject constructor() : RecyclerView.Adapter<MainPageM
     inner class MainPageViewHolder(private val binding: ItemMainPageMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MainPageMenuItem) {
-            binding.tvTitle.text = item.title
+           // binding.tvTitle.text = item.title
             binding.ivIcon.setImageResource(item.iconResId)
             binding.root.setOnClickListener { onItemClick?.invoke(item) }
         }
