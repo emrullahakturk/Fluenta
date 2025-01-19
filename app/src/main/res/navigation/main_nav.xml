@@ -32,7 +32,44 @@
     <fragment
         android:id="@+id/mainPageFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.MainPageFragment"
-        android:label="MainPageFragment" />
+        android:label="MainPageFragment" >
+        <action
+            android:id="@+id/main_to_about_us"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/main_to_ai_tutor"
+            app:destination="@id/aiTutorFragment" />
+        <action
+            android:id="@+id/main_to_favorites"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/main_to_feedback"
+            app:destination="@id/feedbackFragment" />
+        <action
+            android:id="@+id/main_to_listen_and_learn"
+            app:destination="@id/listenAndLearnFragment" />
+        <action
+            android:id="@+id/main_to_most_common_phrases"
+            app:destination="@id/mostCommonPhrasesFragment" />
+        <action
+            android:id="@+id/main_to_most_common_words"
+            app:destination="@id/mostCommonWordsFragment" />
+        <action
+            android:id="@+id/main_to_my_account"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/main_to_oxford"
+            app:destination="@id/oxfordWordsFragment" />
+        <action
+            android:id="@+id/main_to_settings"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/main_to_translator"
+            app:destination="@id/translatorFragment" />
+        <action
+            android:id="@+id/main_to_upgrade_pro"
+            app:destination="@id/upgradeProFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mostCommonPhrasesFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.MostCommonPhrasesFragment"
