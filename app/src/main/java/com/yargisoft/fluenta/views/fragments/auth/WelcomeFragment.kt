@@ -1,4 +1,4 @@
-package com.yargisoft.fluenta.views.fragments.auth_fragments
+package com.yargisoft.fluenta.views.fragments.auth
 
 import android.graphics.Paint
 import android.os.Bundle

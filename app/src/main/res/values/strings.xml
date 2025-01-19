@@ -45,4 +45,20 @@
     <string name="name_surname">Ad Soyad</string>
     <string name="sifremi_unuttum">Şifremi Unuttum</string>
     <string name="enter_mail_adress">Şifre sıfırlama bağlantısı için mail adresinizi giriniz</string>
+    <string name="oxford_3000_words">Oxford 3000 A1-B2 Words</string>
+    <string name="most_common_words">Most Common C1-C2 Words</string>
+    <string name="most_common_phrases">Most Common Phrases</string>
+    <string name="translator">Translator</string>
+    <string name="favorites">Favorites</string>
+    <string name="logout">Logout</string>
+    <string name="listen_and_learn">Listen and Learn</string>
+    <string name="ai_tutor">AI Tutor</string>
+    <string name="upgrade_pro">Upgrade Pro</string>
+    <string name="my_account">My Account</string>
+    <string name="settings">Settings</string>
+    <string name="feedback">Feedback</string>
+    <string name="about_us">About Us</string>
+    <string name="main_page">Main Page</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
 </resources>

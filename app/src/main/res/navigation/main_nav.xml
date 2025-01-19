@@ -3,10 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/blankFragment">
+    app:startDestination="@id/mainPageFragment">
     <fragment
-        android:id="@+id/blankFragment"
+        android:id="@+id/aboutUsFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/aiTutorFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.AiTutorFragment"
+        android:label="fragment_ai_tutor"
+        tools:layout="@layout/fragment_ai_tutor" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.FeedbackFragment"
+        android:label="fragment_feedback"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/listenAndLearnFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.ListenAndLearnFragment"
+        android:label="fragment_listen_and_learn"
+        tools:layout="@layout/fragment_listen_and_learn" />
+    <fragment
+        android:id="@+id/mainPageFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.MainPageFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_main_page" />
+        android:label="MainPageFragment" />
+    <fragment
+        android:id="@+id/mostCommonPhrasesFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.MostCommonPhrasesFragment"
+        android:label="fragment_most_common_phrases"
+        tools:layout="@layout/fragment_most_common_phrases" />
+    <fragment
+        android:id="@+id/mostCommonWordsFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.MostCommonWordsFragment"
+        android:label="fragment_most_common_words"
+        tools:layout="@layout/fragment_most_common_words" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.MyAccountFragment"
+        android:label="fragment_my_account"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/oxfordWordsFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.OxfordWordsFragment"
+        android:label="fragment_oxford_words"
+        tools:layout="@layout/fragment_oxford_words" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/translatorFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.TranslatorFragment"
+        android:label="fragment_translator"
+        tools:layout="@layout/fragment_translator" />
+    <fragment
+        android:id="@+id/upgradeProFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.UpgradeProFragment"
+        android:label="fragment_upgrade_pro"
+        tools:layout="@layout/fragment_upgrade_pro" />
 </navigation>
