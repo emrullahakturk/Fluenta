@@ -5,6 +5,8 @@ import androidx.room.Room
 import com.google.gson.Gson
 import com.yargisoft.fluenta.data.model.DatabaseInitializer
 import com.yargisoft.fluenta.data.model.FluentaDatabase
+import com.yargisoft.fluenta.data.model.MostCommonWord
+import com.yargisoft.fluenta.data.model.MostCommonWordDao
 import com.yargisoft.fluenta.data.model.OxfordWordDao
 import com.yargisoft.fluenta.data.model.QuoteDao
 import dagger.Module
@@ -36,11 +38,18 @@ object DatabaseModule {
     fun provideOxfordWordDao(database: FluentaDatabase): OxfordWordDao {
         return database.oxfordWordDao()
     }
+    @Provides
+    fun provideMostCommonWordDao(database: FluentaDatabase): MostCommonWordDao {
+        return database.mostCommonWordDao()
+    }
 
     @Provides
     @Singleton
-    fun provideDatabaseInitializer(@ApplicationContext  context: Context, quoteDao: QuoteDao, oxfordWordDao: OxfordWordDao): DatabaseInitializer {
-        return DatabaseInitializer(context, quoteDao,oxfordWordDao)
+    fun provideDatabaseInitializer(@ApplicationContext  context: Context,
+                                   quoteDao: QuoteDao,
+                                   mostCommonWordDao: MostCommonWordDao,
+                                   oxfordWordDao: OxfordWordDao): DatabaseInitializer {
+        return DatabaseInitializer(context, quoteDao,oxfordWordDao,mostCommonWordDao)
     }
 
 }
