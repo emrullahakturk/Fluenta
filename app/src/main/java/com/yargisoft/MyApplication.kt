@@ -20,8 +20,11 @@ class MyApplication : Application() {
         super.onCreate()
         // Veritabanını doldurmak için coroutine başlat
         applicationScope.launch {
-            databaseInitializer.quoteInitializer()
-            databaseInitializer.oxfordWordInitializer()
+            databaseInitializer.apply {
+                quoteInitializer()
+                oxfordWordInitializer()
+                mostCommonWordInitializer()
+            }
         }
     }
 }
