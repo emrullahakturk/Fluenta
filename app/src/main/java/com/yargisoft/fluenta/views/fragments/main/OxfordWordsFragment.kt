@@ -35,7 +35,7 @@ class OxfordWordsFragment : Fragment() {
 
         _binding = FragmentOxfordWordsBinding.inflate(inflater, container, false)
 
-        viewModel.loadRandomQuote()
+        viewModel.loadRandomOxfordWord()
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -58,27 +58,11 @@ class OxfordWordsFragment : Fragment() {
             if (!binding.diceLottie.isAnimating) {
                 binding.diceLottie.playAnimation()
                 CoroutineScope(Dispatchers.Main).launch {
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-                    viewModel.loadRandomQuote()
-                    delay(200)
-
+                    viewModel.loadRandomOxfordWord()
+                    repeat(10) {
+                        delay(200)
+                        viewModel.loadRandomOxfordWord()
+                    }
                 }
 
             }

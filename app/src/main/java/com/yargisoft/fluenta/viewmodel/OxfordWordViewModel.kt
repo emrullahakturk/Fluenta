@@ -19,7 +19,7 @@ class OxfordWordViewModel @Inject constructor(
     private val _word = MutableStateFlow<OxfordWord?>(null)
     val word: StateFlow<OxfordWord?> get() = _word
 
-    fun loadRandomQuote() {
+    fun loadRandomOxfordWord() {
         viewModelScope.launch {
             try {
                 _word.value = repository.getRandomOxfordWord()
