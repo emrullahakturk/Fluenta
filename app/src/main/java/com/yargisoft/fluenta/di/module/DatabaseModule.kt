@@ -3,6 +3,7 @@ package com.yargisoft.fluenta.di.module
 import android.content.Context
 import androidx.room.Room
 import com.google.gson.Gson
+import com.yargisoft.fluenta.data.model.CommonPhraseDao
 import com.yargisoft.fluenta.data.model.DatabaseInitializer
 import com.yargisoft.fluenta.data.model.FluentaDatabase
 import com.yargisoft.fluenta.data.model.MostCommonWord
@@ -48,8 +49,10 @@ object DatabaseModule {
     fun provideDatabaseInitializer(@ApplicationContext  context: Context,
                                    quoteDao: QuoteDao,
                                    mostCommonWordDao: MostCommonWordDao,
-                                   oxfordWordDao: OxfordWordDao): DatabaseInitializer {
-        return DatabaseInitializer(context, quoteDao,oxfordWordDao,mostCommonWordDao)
+                                   oxfordWordDao: OxfordWordDao,
+                                   commonPhraseDao: CommonPhraseDao
+    ): DatabaseInitializer {
+        return DatabaseInitializer(context, quoteDao,oxfordWordDao,mostCommonWordDao, commonPhraseDao)
     }
 
 }
