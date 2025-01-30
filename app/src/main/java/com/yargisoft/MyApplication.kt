@@ -24,6 +24,7 @@ class MyApplication : Application() {
                 quoteInitializer()
                 oxfordWordInitializer()
                 mostCommonWordInitializer()
+                commonPhraseInitializer()
             }
         }
     }
