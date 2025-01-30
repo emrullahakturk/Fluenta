@@ -3,6 +3,7 @@ package com.yargisoft.fluenta.di.module
 import android.content.Context
 import androidx.room.Room
 import com.google.gson.Gson
+import com.yargisoft.fluenta.data.model.CommonPhrase
 import com.yargisoft.fluenta.data.model.CommonPhraseDao
 import com.yargisoft.fluenta.data.model.DatabaseInitializer
 import com.yargisoft.fluenta.data.model.FluentaDatabase
@@ -42,6 +43,10 @@ object DatabaseModule {
     @Provides
     fun provideMostCommonWordDao(database: FluentaDatabase): MostCommonWordDao {
         return database.mostCommonWordDao()
+    }
+    @Provides
+    fun provideCommonPhraseDao(database: FluentaDatabase): CommonPhraseDao {
+        return database.commonPhraseDao()
     }
 
     @Provides
