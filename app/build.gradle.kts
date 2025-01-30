@@ -69,6 +69,9 @@ dependencies {
 
     implementation(libs.gson)
 
+    implementation(libs.retrofit.gson.converter)
+    implementation(libs.retrofit)
+
 }
 
 ksp {
