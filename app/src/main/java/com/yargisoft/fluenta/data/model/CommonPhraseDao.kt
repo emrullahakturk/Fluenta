@@ -7,7 +7,7 @@ import androidx.room.Query
 
 @Dao
 interface CommonPhraseDao {
-    @Query("SELECT * FROM oxford_words ORDER BY RANDOM() LIMIT 1")
+    @Query("SELECT * FROM common_phrases ORDER BY RANDOM() LIMIT 1")
     suspend fun getRandomCommonPhrase(): CommonPhrase
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

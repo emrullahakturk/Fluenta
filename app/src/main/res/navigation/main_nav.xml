@@ -72,9 +72,9 @@
     </fragment>
     <fragment
         android:id="@+id/mostCommonPhrasesFragment"
-        android:name="com.yargisoft.fluenta.views.fragments.main.MostCommonPhrasesFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.main.CommonPhrasesFragment"
         android:label="fragment_most_common_phrases"
-        tools:layout="@layout/fragment_most_common_phrases" />
+        tools:layout="@layout/fragment_common_phrases" />
     <fragment
         android:id="@+id/mostCommonWordsFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.MostCommonWordsFragment"
