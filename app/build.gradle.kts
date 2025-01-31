@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android)
-    alias(libs.plugins.kotlin)
-    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
     id("com.google.gms.google-services")
 }
 
@@ -35,12 +35,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
@@ -72,10 +72,13 @@ dependencies {
     implementation(libs.retrofit.gson.converter)
     implementation(libs.retrofit)
 
+    implementation(libs.kotlin.stdlib)
+    ksp(libs.hilt.compiler) 
 }
 
 ksp {
     // KSP'nin Room şema dosyaları için doğru dizini kullanmasını sağlayın
     arg("room.schemaLocation", "$projectDir/schemas")
     arg("room.incremental", "true")
+   // arg("dagger.experimentalDaggerErrorMessages", "true")
 }
