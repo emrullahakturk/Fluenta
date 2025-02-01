@@ -16,31 +16,53 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Kelime (Word) ve Seviye (Level) -->
-        <RelativeLayout
+        <!-- Phrase (Phrase) ve Seviye (Level) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvWord"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="abandon"
+                android:text="A piece of cake"
+                android:textColor="@color/app_blue"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/app_blue" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvLevel"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tvLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="B2"
-                android:textSize="14sp"
-                android:padding="4dp"
                 android:layout_alignParentEnd="true"
                 android:backgroundTint="@color/app_blue"
-                android:layout_marginEnd="4dp" />
-        </RelativeLayout>
+                android:padding="4dp"
+                android:text="A2"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnSpeak"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageView
+                android:id="@+id/btnSpeak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="speaker icon for speech of the text"
+                android:src="@drawable/ic_speaker"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <!-- Tür (Type) -->
         <TextView
