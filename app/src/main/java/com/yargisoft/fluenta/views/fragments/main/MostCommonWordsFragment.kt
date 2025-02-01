@@ -64,8 +64,8 @@ class MostCommonWordsFragment @Inject constructor() : Fragment() {
         }
 
         binding.btnSpeak.setOnClickListener {
-            val phrase = binding.tvWord.text.toString()
-            viewModel.speak(phrase, requireContext())
+            val word = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
+            viewModel.speak(word, requireContext())
             Toast.makeText(requireContext(), binding.tvWord.text.toString(), Toast.LENGTH_SHORT).show()
         }
 
