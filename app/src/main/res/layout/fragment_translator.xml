@@ -1,0 +1,33 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etInputText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Çevrilecek metni girin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnTranslate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Çevir"
+        app:layout_constraintTop_toBottomOf="@id/etInputText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTranslatedText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Çeviri Sonucu"
+        app:layout_constraintTop_toBottomOf="@id/btnTranslate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
