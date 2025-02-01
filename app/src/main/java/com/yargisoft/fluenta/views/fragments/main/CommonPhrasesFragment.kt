@@ -65,7 +65,7 @@ class CommonPhrasesFragment @Inject constructor() : Fragment() {
         }
 
         binding.btnSpeak.setOnClickListener {
-            val phrase = binding.tvPhrase.text.toString()
+            val phrase ="${binding.tvPhrase.text}  '.'   ${binding.tvEnExample.text} "
             viewModel.speak(phrase, requireContext())
             Toast.makeText(requireContext(), binding.tvPhrase.text.toString(), Toast.LENGTH_SHORT).show()
         }
