@@ -68,6 +68,11 @@ class OxfordWordsFragment : Fragment() {
             }
         }
 
+        binding.btnSpeak.setOnClickListener {
+            val word = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
+            viewModel.speak(word, requireContext())
+        }
+
         return binding.root
     }
 
