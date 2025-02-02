@@ -6,6 +6,7 @@ import com.google.gson.Gson
 import com.yargisoft.fluenta.data.model.CommonPhrase
 import com.yargisoft.fluenta.data.model.CommonPhraseDao
 import com.yargisoft.fluenta.data.model.DatabaseInitializer
+import com.yargisoft.fluenta.data.model.FavoriteWordDao
 import com.yargisoft.fluenta.data.model.FluentaDatabase
 import com.yargisoft.fluenta.data.model.MostCommonWord
 import com.yargisoft.fluenta.data.model.MostCommonWordDao
@@ -48,6 +49,10 @@ object DatabaseModule {
     fun provideCommonPhraseDao(database: FluentaDatabase): CommonPhraseDao {
         return database.commonPhraseDao()
     }
+    @Provides
+    fun provideFavoriteWordDao(database: FluentaDatabase): FavoriteWordDao {
+        return database.favoriteWordDao()
+    }
 
     @Provides
     @Singleton
@@ -55,7 +60,7 @@ object DatabaseModule {
                                    quoteDao: QuoteDao,
                                    mostCommonWordDao: MostCommonWordDao,
                                    oxfordWordDao: OxfordWordDao,
-                                   commonPhraseDao: CommonPhraseDao
+                                   commonPhraseDao: CommonPhraseDao,
     ): DatabaseInitializer {
         return DatabaseInitializer(context, quoteDao,oxfordWordDao,mostCommonWordDao, commonPhraseDao)
     }
