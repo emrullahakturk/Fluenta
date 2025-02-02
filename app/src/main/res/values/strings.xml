@@ -63,4 +63,8 @@
     <string name="cevrilecek_metni_girin">Çevrilecek metni girin</string>
     <string name="Cevir">Çevir</string>
     <string name="ceviri_sonucu">Çeviri Sonucu</string>
+    <string name="about_us_text">Fluenta, dil öğrenme sürecini hızlandıran, eğlenceli ve akıllı bir öğrenme deneyimi sunan yenilikçi bir uygulamadır. Günlük hayatınızda karşılaşacağınız kelimeleri, cümleleri ve gramer yapılarını en iyi şekilde öğrenmenize yardımcı olur.</string>
+    <string name="one_cikan_ozellikler">🚀 Öne Çıkan Özellikler:</string>
+    <string name="list_of_about_us">✅ Oxford 3000 Kelime Listesi ile en çok kullanılan kelimeleri öğrenin.\n\n✅ Günlük Pratik Cümleler sayesinde konuşma becerilerinizi geliştirin.\n\n✅ Seslendirme Desteği ile kelimelerin doğru telaffuzlarını öğrenin.\n\n✅ Anında Çeviri Özelliği sayesinde bilmediğiniz kelimeleri hızlıca anlayın.\n\n✅ Yapay Zeka Destekli Dersler ile seviyenize uygun içerikler keşfedin.\n\n✅ Gerçek Hayattan Örnekler ile öğrendiklerinizi pekiştirin.\n\n✅ Motivasyon Mesajları ile dil öğrenme sürecinizde ilham alın.\n\n📖 Fluenta, başlangıç seviyesinden ileri düzeye kadar herkes için mükemmel bir dil öğrenme deneyimi sunar.\n\nHemen keşfetmeye başlayın ve dil becerilerinizi geliştirin! 🚀</string>
+    <string name="explore">Keşfet</string>
 </resources>
