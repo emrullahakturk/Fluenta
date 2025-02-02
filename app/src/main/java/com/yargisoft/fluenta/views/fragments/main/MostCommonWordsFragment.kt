@@ -50,6 +50,8 @@ class MostCommonWordsFragment @Inject constructor() : Fragment() {
         }
 
         binding.diceLottie.setOnClickListener {
+            viewModel.ttsStop()
+            binding.btnSpeak.isClickable = false
             if (!binding.diceLottie.isAnimating) {
                 binding.diceLottie.playAnimation()
                 CoroutineScope(Dispatchers.Main).launch {
@@ -58,6 +60,7 @@ class MostCommonWordsFragment @Inject constructor() : Fragment() {
                         delay(200)
                         viewModel.loadRandomMostCommonWord()
                     }
+                    binding.btnSpeak.isClickable = true
                 }
 
             }
@@ -65,7 +68,7 @@ class MostCommonWordsFragment @Inject constructor() : Fragment() {
 
         binding.btnSpeak.setOnClickListener {
             val word = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
-            viewModel.speak(word, requireContext())
+            viewModel.ttsSpeak(word, requireContext())
             Toast.makeText(requireContext(), binding.tvWord.text.toString(), Toast.LENGTH_SHORT).show()
         }
 
