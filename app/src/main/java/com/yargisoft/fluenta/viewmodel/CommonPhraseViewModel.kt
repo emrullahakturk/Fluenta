@@ -35,7 +35,7 @@ class CommonPhraseViewModel @Inject constructor() : ViewModel() {
     }
 
 
-    fun speak(text: String, context: Context) {
+    fun ttsSpeak(text: String, context: Context) {
         if (textToSpeechUseCase.isTextToSpeechEnabled(context)){
             textToSpeechUseCase.speak(text)
         }else{
@@ -43,7 +43,7 @@ class CommonPhraseViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    fun stop() {
+    fun ttsStop() {
         textToSpeechUseCase.stop()
     }
 

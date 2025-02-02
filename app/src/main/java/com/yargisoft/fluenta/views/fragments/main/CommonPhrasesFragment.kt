@@ -51,6 +51,8 @@ class CommonPhrasesFragment @Inject constructor() : Fragment() {
         }
 
         binding.diceLottie.setOnClickListener {
+            binding.btnSpeak.isClickable = false
+            viewModel.ttsStop()
             if (!binding.diceLottie.isAnimating) {
                 binding.diceLottie.playAnimation()
                 CoroutineScope(Dispatchers.Main).launch {
@@ -59,6 +61,7 @@ class CommonPhrasesFragment @Inject constructor() : Fragment() {
                         delay(200)
                         viewModel.loadRandomMostCommonWord()
                     }
+                    binding.btnSpeak.isClickable = true
                 }
 
             }
@@ -66,7 +69,7 @@ class CommonPhrasesFragment @Inject constructor() : Fragment() {
 
         binding.btnSpeak.setOnClickListener {
             val phrase ="${binding.tvPhrase.text}  '.'   ${binding.tvEnExample.text} "
-            viewModel.speak(phrase, requireContext())
+            viewModel.ttsSpeak(phrase, requireContext())
             Toast.makeText(requireContext(), binding.tvPhrase.text.toString(), Toast.LENGTH_SHORT).show()
         }
 
