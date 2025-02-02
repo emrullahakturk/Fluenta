@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -55,6 +56,8 @@ class OxfordWordsFragment : Fragment() {
 
 
         binding.diceLottie.setOnClickListener {
+            binding.btnSpeak.isClickable = false
+            viewModel.ttsStop()
             if (!binding.diceLottie.isAnimating) {
                 binding.diceLottie.playAnimation()
                 CoroutineScope(Dispatchers.Main).launch {
@@ -63,6 +66,7 @@ class OxfordWordsFragment : Fragment() {
                         delay(200)
                         viewModel.loadRandomOxfordWord()
                     }
+                    binding.btnSpeak.isClickable = true
                 }
 
             }
@@ -70,7 +74,7 @@ class OxfordWordsFragment : Fragment() {
 
         binding.btnSpeak.setOnClickListener {
             val word = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
-            viewModel.speak(word, requireContext())
+            viewModel.ttsSpeak(word, requireContext())
         }
 
         return binding.root

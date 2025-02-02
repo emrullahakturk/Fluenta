@@ -33,7 +33,7 @@ class OxfordWordViewModel @Inject constructor(
         }
     }
 
-    fun speak(text: String, context: Context) {
+    fun ttsSpeak(text: String, context: Context) {
         if (textToSpeechUseCase.isTextToSpeechEnabled(context)){
             textToSpeechUseCase.speak(text)
         }else{
@@ -41,7 +41,7 @@ class OxfordWordViewModel @Inject constructor(
         }
     }
 
-    fun stop() {
+    fun ttsStop() {
         textToSpeechUseCase.stop()
     }
 }
