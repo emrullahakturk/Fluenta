@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
@@ -41,6 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
                 android:backgroundTint="@color/app_blue"
                 android:padding="4dp"
                 android:text="A2"
@@ -48,19 +50,32 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btnSpeak"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/btnSpeak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
                 android:contentDescription="speaker icon for speech of the text"
                 android:src="@drawable/ic_speaker"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/favoriteIcon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.5" />
+
+            <ImageView
+                android:id="@+id/favoriteIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+            </ImageView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Tür (Type) -->
@@ -99,7 +114,7 @@
             android:id="@+id/tvTrExample"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projeyi terk etmek zorunda kaldı."
+            android:text="@string/blank"
             android:textSize="14sp"
             android:layout_marginTop="4dp"
             android:textColor="@android:color/black" />
