@@ -5,17 +5,22 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.data.model.Favorite
-import com.yargisoft.fluenta.databinding.ItemFavoriteCommonWordsBinding
+import com.yargisoft.fluenta.databinding.ItemCommonWordsBinding
+import com.yargisoft.fluenta.usecase.TextToSpeechUseCase
 import javax.inject.Inject
 
 class CommonWordsFavoritesAdapter @Inject constructor() :
     RecyclerView.Adapter<CommonWordsFavoritesAdapter.FavoriteWordViewHolder>() {
 
+        @Inject
+    lateinit var textToSpeechUseCase: TextToSpeechUseCase
+
     private var words: List<Favorite> = emptyList()
     private var onClickBtnRemove: ((word: String) -> Unit)? = null
 
-    inner class FavoriteWordViewHolder(private val binding: ItemFavoriteCommonWordsBinding) :
+    inner class FavoriteWordViewHolder(private val binding: ItemCommonWordsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(word: Favorite) {
             binding.tvWord.text = word.word
@@ -23,14 +28,19 @@ class CommonWordsFavoritesAdapter @Inject constructor() :
             binding.tvTrExample.text = word.trExample
             binding.tvLevel.text = word.level
             binding.tvMeaning.text = word.meaning
+            binding.favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
             binding.favoriteIcon.setOnClickListener {
                 onClickBtnRemove?.invoke(word.word)
+            }
+            binding.btnSpeak.setOnClickListener {
+                val wordToSpeech = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
+                textToSpeechUseCase.speak(wordToSpeech)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteWordViewHolder {
-        val binding = ItemFavoriteCommonWordsBinding.inflate(
+        val binding = ItemCommonWordsBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
