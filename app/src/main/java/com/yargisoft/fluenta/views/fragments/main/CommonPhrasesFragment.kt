@@ -11,8 +11,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.yargisoft.fluenta.databinding.FragmentCommonPhrasesBinding
-import com.yargisoft.fluenta.databinding.FragmentMostCommonWordsBinding
+import com.yargisoft.fluenta.usecase.AddFavoriteUseCase
 import com.yargisoft.fluenta.viewmodel.CommonPhraseViewModel
+import com.yargisoft.fluenta.viewmodel.FavoriteViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +27,10 @@ class CommonPhrasesFragment @Inject constructor() : Fragment() {
     private val viewModel: CommonPhraseViewModel by viewModels()
     private lateinit var _binding: FragmentCommonPhrasesBinding
     private val binding get() = _binding
+    private val favoriteViewModel: FavoriteViewModel by viewModels()
+
+    @Inject
+    lateinit var addFavoriteUseCase: AddFavoriteUseCase
 
 
     override fun onCreateView(
@@ -68,11 +73,25 @@ class CommonPhrasesFragment @Inject constructor() : Fragment() {
         }
 
         binding.btnSpeak.setOnClickListener {
-            val phrase ="${binding.tvPhrase.text}  '.'   ${binding.tvEnExample.text} "
+            val phrase = "${binding.tvPhrase.text}  '.'   ${binding.tvEnExample.text} "
             viewModel.ttsSpeak(phrase, requireContext())
-            Toast.makeText(requireContext(), binding.tvPhrase.text.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), binding.tvPhrase.text.toString(), Toast.LENGTH_SHORT)
+                .show()
         }
 
+        binding.favoriteIcon.setOnClickListener {
+            addFavoriteUseCase.addFavorite(
+                favoriteViewModel,
+                "common_phrases",
+                binding.tvPhrase.text.toString(),
+                binding.tvType.text.toString(),
+                binding.tvLevel.text.toString(),
+                binding.tvMeaning.text.toString(),
+                binding.tvTrExample.text.toString(),
+                binding.tvEnExample.text.toString(),
+                binding.favoriteIcon
+            )
+        }
         return binding.root
     }
 
