@@ -41,73 +41,76 @@ class OxfordWordsFragment : Fragment() {
 
         viewModel.loadRandomOxfordWord()
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.word.collect { word ->
-                    binding.apply {
-                        tvWord.text = word?.word
-                        tvType.text = word?.type
-                        tvLevel.text = word?.level
-                        tvMeaning.text = word?.meaning
-                        tvEnExample.text = word?.enExample
-                        tvTrExample.text = word?.trExample
+        binding.apply {
+            item.apply {
+
+                viewLifecycleOwner.lifecycleScope.launch {
+                    viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                        viewModel.word.collect { word ->
+                            tvWord.text = word?.word
+                            tvType.text = word?.type
+                            tvLevel.text = word?.level
+                            tvMeaning.text = word?.meaning
+                            tvEnExample.text = word?.enExample
+                            tvTrExample.text = word?.trExample
+                        }
                     }
                 }
-            }
-        }
 
+                diceLottie.setOnClickListener {
+                    favoriteIcon.isClickable = false
+                    btnSpeak.isClickable = false
+                    viewModel.ttsStop()
+                    if (!diceLottie.isAnimating) {
+                        diceLottie.playAnimation()
+                        CoroutineScope(Dispatchers.Main).launch {
+                            viewModel.loadRandomOxfordWord()
+                            repeat(10) {
+                                delay(200)
+                                viewModel.loadRandomOxfordWord()
+                            }
 
+                            if (favoriteViewModel.isWordFavorite(
+                                    tvWord.text.toString(),
+                                    "oxford_word"
+                                )
+                            ) {
+                                favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
+                            } else {
+                                favoriteIcon.setImageResource(R.drawable.ic_favorite)
+                            }
 
-        binding.diceLottie.setOnClickListener {
-            binding.favoriteIcon.isClickable = false
-            binding.btnSpeak.isClickable = false
-            viewModel.ttsStop()
-            if (!binding.diceLottie.isAnimating) {
-                binding.diceLottie.playAnimation()
-                CoroutineScope(Dispatchers.Main).launch {
-                    viewModel.loadRandomOxfordWord()
-                    repeat(10) {
-                        delay(200)
-                        viewModel.loadRandomOxfordWord()
+                            btnSpeak.isClickable = true
+                            favoriteIcon.isClickable = true
+                        }
+
                     }
+                }
 
-                    if (favoriteViewModel.isWordFavorite(
-                            binding.tvWord.text.toString(),
-                            "oxford_word"
-                        )
-                    ) {
-                        binding.favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
-                    } else {
-                        binding.favoriteIcon.setImageResource(R.drawable.ic_favorite)
-                    }
 
-                    binding.btnSpeak.isClickable = true
-                    binding.favoriteIcon.isClickable = true
+                btnSpeak.setOnClickListener {
+                    val word = "${tvWord.text}  '.'   ${tvEnExample.text} "
+                    viewModel.ttsSpeak(word, requireContext())
+                }
+
+
+                favoriteIcon.setOnClickListener {
+                    addFavoriteUseCase.addFavorite(
+                        favoriteViewModel,
+                        tvWord.text.toString(),
+                        tvType.text.toString(),
+                        "oxford_word",
+                        tvLevel.text.toString(),
+                        tvMeaning.text.toString(),
+                        tvTrExample.text.toString(),
+                        tvEnExample.text.toString(),
+                        favoriteIcon
+                    )
                 }
 
             }
+
+            return root
         }
-
-        binding.btnSpeak.setOnClickListener {
-            val word = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
-            viewModel.ttsSpeak(word, requireContext())
-        }
-
-
-        binding.favoriteIcon.setOnClickListener {
-            addFavoriteUseCase.addFavorite(
-                favoriteViewModel,
-                "oxford_word",
-                binding.tvWord.text.toString(),
-                binding.tvType.text.toString(),
-                binding.tvLevel.text.toString(),
-                binding.tvMeaning.text.toString(),
-                binding.tvTrExample.text.toString(),
-                binding.tvEnExample.text.toString(),
-                binding.favoriteIcon
-            )
-        }
-
-        return binding.root
     }
 }
