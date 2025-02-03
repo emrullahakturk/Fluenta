@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_margin="8dp"
     android:background="@android:color/white"
+    android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
@@ -45,18 +44,30 @@
                 android:text="@string/word_level"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/favoriteIcon"
+                app:layout_constraintEnd_toStartOf="@+id/btnSpeak"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
 
+            <ImageView
+                android:id="@+id/btnSpeak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/voice_it"
+                android:src="@drawable/ic_speaker"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/favoriteIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
 
             <ImageButton
                 android:id="@+id/favoriteIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/remove_from_favorites"
-                android:src="@drawable/ic_favorite_filled"
+                android:contentDescription="@string/add_favorite"
+                android:src="@drawable/ic_favorite"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -74,7 +85,6 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp" />
 
-
         <TextView
             android:id="@+id/tvMeaning"
             android:layout_width="wrap_content"
@@ -83,7 +93,6 @@
             android:text="@string/word_meaning"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
-
 
         <TextView
             android:id="@+id/tvEnExample"
@@ -103,6 +112,7 @@
             android:text="@string/word_tr_example"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
+
 
     </LinearLayout>
 
