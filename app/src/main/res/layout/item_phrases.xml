@@ -48,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/btnSpeak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,6 +56,7 @@
                 android:layout_marginEnd="5dp"
                 android:contentDescription="@string/voice_it"
                 android:src="@drawable/ic_speaker"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/favoriteIcon"
                 app:layout_constraintTop_toTopOf="parent"
