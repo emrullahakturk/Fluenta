@@ -22,7 +22,17 @@
         android:id="@+id/favoritesFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.FavoritesFragment"
         android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/favorites_to_oxford_word"
+            app:destination="@id/favoriteOxfordWordFragment" />
+        <action
+            android:id="@+id/favorites_to_common_word"
+            app:destination="@id/favoriteCommonWordFragment" />
+        <action
+            android:id="@+id/favorite_to_phrases"
+            app:destination="@id/favoritePhrasesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/feedbackFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.FeedbackFragment"
@@ -109,4 +119,19 @@
         android:name="com.yargisoft.fluenta.views.fragments.main.UpgradeProFragment"
         android:label="fragment_upgrade_pro"
         tools:layout="@layout/fragment_upgrade_pro" />
+    <fragment
+        android:id="@+id/favoriteCommonWordFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.favorites.FavoriteCommonWordFragment"
+        android:label="fragment_favorite_common_word"
+        tools:layout="@layout/fragment_favorite_common_word" />
+    <fragment
+        android:id="@+id/favoriteOxfordWordFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.favorites.FavoriteOxfordWordFragment"
+        android:label="fragment_favorite_oxford_word"
+        tools:layout="@layout/fragment_favorite_oxford_word" />
+    <fragment
+        android:id="@+id/favoritePhrasesFragment"
+        android:name="com.yargisoft.fluenta.views.fragments.favorites.FavoritePhrasesFragment"
+        android:label="fragment_favorite_phrases"
+        tools:layout="@layout/fragment_favorite_phrases" />
 </navigation>
