@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.data.model.Favorite
-import com.yargisoft.fluenta.databinding.ItemFavoriteOxfordWordBinding
+import com.yargisoft.fluenta.databinding.ItemOxfordWordBinding
+import com.yargisoft.fluenta.usecase.TextToSpeechUseCase
 import javax.inject.Inject
 
 class OxfordFavoritesAdapter @Inject constructor() :
@@ -15,7 +17,10 @@ class OxfordFavoritesAdapter @Inject constructor() :
     private var words: List<Favorite> = emptyList()
     private var onClickBtnRemove: ((word: String) -> Unit)? = null
 
-    inner class FavoriteWordViewHolder(private val binding: ItemFavoriteOxfordWordBinding) :
+    @Inject
+    lateinit var textToSpeechUseCase: TextToSpeechUseCase
+
+    inner class FavoriteWordViewHolder(private val binding: ItemOxfordWordBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(word: Favorite) {
             binding.tvWord.text = word.word
@@ -23,16 +28,20 @@ class OxfordFavoritesAdapter @Inject constructor() :
             binding.tvTrExample.text = word.trExample
             binding.tvLevel.text = word.level
             binding.tvMeaning.text = word.meaning
-
+            binding.favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
             binding.favoriteIcon.setOnClickListener {
                 onClickBtnRemove?.invoke(word.word)
+            }
+            binding.btnSpeak.setOnClickListener {
+                val wordToSpeech = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
+                textToSpeechUseCase.speak(wordToSpeech)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteWordViewHolder {
         val binding =
-            ItemFavoriteOxfordWordBinding.inflate(
+            ItemOxfordWordBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
