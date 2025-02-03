@@ -1,7 +1,6 @@
 package com.yargisoft.fluenta.views.adapter
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -20,6 +19,11 @@ class OxfordFavoritesAdapter @Inject constructor() :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(word: Favorite) {
             binding.tvWord.text = word.word
+            binding.tvEnExample.text = word.enExample
+            binding.tvTrExample.text = word.trExample
+            binding.tvLevel.text = word.level
+            binding.tvMeaning.text = word.meaning
+
             binding.favoriteIcon.setOnClickListener {
                 onClickBtnRemove?.invoke(word.word)
             }
