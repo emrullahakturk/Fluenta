@@ -2,13 +2,10 @@ package com.yargisoft.fluenta.di.module
 
 import android.content.Context
 import androidx.room.Room
-import com.google.gson.Gson
-import com.yargisoft.fluenta.data.model.CommonPhrase
 import com.yargisoft.fluenta.data.model.CommonPhraseDao
 import com.yargisoft.fluenta.data.model.DatabaseInitializer
-import com.yargisoft.fluenta.data.model.FavoriteWordDao
+import com.yargisoft.fluenta.data.model.FavoriteDao
 import com.yargisoft.fluenta.data.model.FluentaDatabase
-import com.yargisoft.fluenta.data.model.MostCommonWord
 import com.yargisoft.fluenta.data.model.MostCommonWordDao
 import com.yargisoft.fluenta.data.model.OxfordWordDao
 import com.yargisoft.fluenta.data.model.QuoteDao
@@ -37,32 +34,43 @@ object DatabaseModule {
     fun provideQuoteDao(database: FluentaDatabase): QuoteDao {
         return database.quoteDao()
     }
+
     @Provides
     fun provideOxfordWordDao(database: FluentaDatabase): OxfordWordDao {
         return database.oxfordWordDao()
     }
+
     @Provides
     fun provideMostCommonWordDao(database: FluentaDatabase): MostCommonWordDao {
         return database.mostCommonWordDao()
     }
+
     @Provides
     fun provideCommonPhraseDao(database: FluentaDatabase): CommonPhraseDao {
         return database.commonPhraseDao()
     }
+
     @Provides
-    fun provideFavoriteWordDao(database: FluentaDatabase): FavoriteWordDao {
-        return database.favoriteWordDao()
+    fun provideFavoriteWordDao(database: FluentaDatabase): FavoriteDao {
+        return database.favoriteDao()
     }
 
     @Provides
     @Singleton
-    fun provideDatabaseInitializer(@ApplicationContext  context: Context,
-                                   quoteDao: QuoteDao,
-                                   mostCommonWordDao: MostCommonWordDao,
-                                   oxfordWordDao: OxfordWordDao,
-                                   commonPhraseDao: CommonPhraseDao,
+    fun provideDatabaseInitializer(
+        @ApplicationContext context: Context,
+        quoteDao: QuoteDao,
+        mostCommonWordDao: MostCommonWordDao,
+        oxfordWordDao: OxfordWordDao,
+        commonPhraseDao: CommonPhraseDao,
     ): DatabaseInitializer {
-        return DatabaseInitializer(context, quoteDao,oxfordWordDao,mostCommonWordDao, commonPhraseDao)
+        return DatabaseInitializer(
+            context,
+            quoteDao,
+            oxfordWordDao,
+            mostCommonWordDao,
+            commonPhraseDao
+        )
     }
 
 }
