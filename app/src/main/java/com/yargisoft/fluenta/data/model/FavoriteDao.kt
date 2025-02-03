@@ -7,7 +7,7 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface FavoriteWordDao {
+interface FavoriteDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFavoriteWord(favoriteWord: Favorite)
