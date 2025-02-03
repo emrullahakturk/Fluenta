@@ -10,8 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.databinding.FragmentMostCommonWordsBinding
+import com.yargisoft.fluenta.usecase.AddFavoriteUseCase
 import com.yargisoft.fluenta.viewmodel.FavoriteViewModel
 import com.yargisoft.fluenta.viewmodel.MostCommonWordViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,6 +29,9 @@ class MostCommonWordsFragment @Inject constructor() : Fragment() {
     private val favoriteViewModel: FavoriteViewModel by viewModels()
     private lateinit var _binding: FragmentMostCommonWordsBinding
     private val binding get() = _binding
+
+    @Inject
+    lateinit var addFavoriteUseCase: AddFavoriteUseCase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,32 +79,19 @@ class MostCommonWordsFragment @Inject constructor() : Fragment() {
                 .show()
         }
 
+
         binding.favoriteIcon.setOnClickListener {
-            CoroutineScope(Dispatchers.Main).launch {
-                if (favoriteViewModel.isWordFavorite(
-                        binding.tvWord.text.toString(),
-                        "common_words"
-                    )
-                ) {
-
-                    favoriteViewModel.removeFavorite(
-                        binding.tvWord.text.toString(),
-                        "common_words"
-                    )
-                    binding.favoriteIcon.setImageResource(R.drawable.ic_favorite)
-                } else {
-
-                    favoriteViewModel.addFavorite(
-                        binding.tvWord.text.toString(),
-                        "common_words",
-                        binding.tvLevel.text.toString(),
-                        binding.tvMeaning.text.toString(),
-                        binding.tvTrExample.text.toString(),
-                        binding.tvEnExample.text.toString()
-                    )
-                    binding.favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
-                }
-            }
+            addFavoriteUseCase.addFavorite(
+                favoriteViewModel,
+                "common_words",
+                binding.tvWord.text.toString(),
+                binding.tvType.text.toString(),
+                binding.tvLevel.text.toString(),
+                binding.tvMeaning.text.toString(),
+                binding.tvTrExample.text.toString(),
+                binding.tvEnExample.text.toString(),
+                binding.favoriteIcon
+            )
         }
 
         return binding.root
