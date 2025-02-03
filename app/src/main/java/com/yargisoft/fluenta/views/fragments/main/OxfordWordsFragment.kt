@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -12,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.databinding.FragmentOxfordWordsBinding
+import com.yargisoft.fluenta.usecase.AddFavoriteUseCase
 import com.yargisoft.fluenta.viewmodel.FavoriteViewModel
 import com.yargisoft.fluenta.viewmodel.OxfordWordViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,6 +19,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class OxfordWordsFragment : Fragment() {
@@ -27,6 +28,9 @@ class OxfordWordsFragment : Fragment() {
     private val favoriteViewModel: FavoriteViewModel by viewModels()
     private lateinit var _binding: FragmentOxfordWordsBinding
     private val binding get() = _binding
+
+    @Inject
+    lateinit var addFavoriteUseCase: AddFavoriteUseCase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -89,31 +93,19 @@ class OxfordWordsFragment : Fragment() {
             viewModel.ttsSpeak(word, requireContext())
         }
 
+
         binding.favoriteIcon.setOnClickListener {
-            CoroutineScope(Dispatchers.Main).launch {
-                if (favoriteViewModel.isWordFavorite(
-                        binding.tvWord.text.toString(),
-                        "oxford_word"
-                    )
-                ) {
-                    Toast.makeText(requireContext(), "Favorite ", Toast.LENGTH_SHORT).show()
-
-                    favoriteViewModel.removeFavorite(binding.tvWord.text.toString(), "oxford_word")
-                    binding.favoriteIcon.setImageResource(R.drawable.ic_favorite)
-                } else {
-                    Toast.makeText(requireContext(), "Favorite not", Toast.LENGTH_SHORT).show()
-
-                    favoriteViewModel.addFavorite(
-                        binding.tvWord.text.toString(),
-                        "oxford_word",
-                        binding.tvLevel.text.toString(),
-                        binding.tvMeaning.text.toString(),
-                        binding.tvTrExample.text.toString(),
-                        binding.tvEnExample.text.toString()
-                    )
-                    binding.favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
-                }
-            }
+            addFavoriteUseCase.addFavorite(
+                favoriteViewModel,
+                "oxford_word",
+                binding.tvWord.text.toString(),
+                binding.tvType.text.toString(),
+                binding.tvLevel.text.toString(),
+                binding.tvMeaning.text.toString(),
+                binding.tvTrExample.text.toString(),
+                binding.tvEnExample.text.toString(),
+                binding.favoriteIcon
+            )
         }
 
         return binding.root
