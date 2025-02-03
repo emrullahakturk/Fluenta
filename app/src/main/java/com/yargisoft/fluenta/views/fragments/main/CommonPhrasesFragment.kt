@@ -41,57 +41,61 @@ class CommonPhrasesFragment @Inject constructor() : Fragment() {
 
         viewModel.loadRandomMostCommonWord()
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.phrase.collect { phrase ->
-                    binding.apply {
-                        tvPhrase.text = phrase?.phrase
-                        tvLevel.text = phrase?.level
-                        tvMeaning.text = phrase?.meaning
-                        tvEnExample.text = phrase?.enExample
-                        tvTrExample.text = phrase?.trExample
-                    }
-                }
-            }
-        }
+       binding.apply {
+           item.apply {
+               viewLifecycleOwner.lifecycleScope.launch {
+                   viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                       viewModel.phrase.collect { phrase ->
+                           apply {
+                               tvPhrase.text = phrase?.phrase
+                               tvLevel.text = phrase?.level
+                               tvMeaning.text = phrase?.meaning
+                               tvEnExample.text = phrase?.enExample
+                               tvTrExample.text = phrase?.trExample
+                           }
+                       }
+                   }
+               }
 
-        binding.diceLottie.setOnClickListener {
-            binding.btnSpeak.isClickable = false
-            viewModel.ttsStop()
-            if (!binding.diceLottie.isAnimating) {
-                binding.diceLottie.playAnimation()
-                CoroutineScope(Dispatchers.Main).launch {
-                    viewModel.loadRandomMostCommonWord()
-                    repeat(10) {
-                        delay(200)
-                        viewModel.loadRandomMostCommonWord()
-                    }
-                    binding.btnSpeak.isClickable = true
-                }
+               diceLottie.setOnClickListener {
+                   btnSpeak.isClickable = false
+                   viewModel.ttsStop()
+                   if (!diceLottie.isAnimating) {
+                       diceLottie.playAnimation()
+                       CoroutineScope(Dispatchers.Main).launch {
+                           viewModel.loadRandomMostCommonWord()
+                           repeat(10) {
+                               delay(200)
+                               viewModel.loadRandomMostCommonWord()
+                           }
+                           btnSpeak.isClickable = true
+                       }
 
-            }
-        }
+                   }
+               }
 
-        binding.btnSpeak.setOnClickListener {
-            val phrase = "${binding.tvPhrase.text}  '.'   ${binding.tvEnExample.text} "
-            viewModel.ttsSpeak(phrase, requireContext())
-            Toast.makeText(requireContext(), binding.tvPhrase.text.toString(), Toast.LENGTH_SHORT)
-                .show()
-        }
+               btnSpeak.setOnClickListener {
+                   val phrase = "${tvPhrase.text}  '.'   ${tvEnExample.text} "
+                   viewModel.ttsSpeak(phrase, requireContext())
+                   Toast.makeText(requireContext(), tvPhrase.text.toString(), Toast.LENGTH_SHORT)
+                       .show()
+               }
 
-        binding.favoriteIcon.setOnClickListener {
-            addFavoriteUseCase.addFavorite(
-                favoriteViewModel,
-                "common_phrases",
-                binding.tvPhrase.text.toString(),
-                binding.tvType.text.toString(),
-                binding.tvLevel.text.toString(),
-                binding.tvMeaning.text.toString(),
-                binding.tvTrExample.text.toString(),
-                binding.tvEnExample.text.toString(),
-                binding.favoriteIcon
-            )
-        }
+               favoriteIcon.setOnClickListener {
+                   addFavoriteUseCase.addFavorite(
+                       favoriteViewModel,
+                       "common_phrases",
+                       tvPhrase.text.toString(),
+                       tvType.text.toString(),
+                       tvLevel.text.toString(),
+                       tvMeaning.text.toString(),
+                       tvTrExample.text.toString(),
+                       tvEnExample.text.toString(),
+                       favoriteIcon
+                   )
+               }
+           }
+       }
         return binding.root
     }
 
