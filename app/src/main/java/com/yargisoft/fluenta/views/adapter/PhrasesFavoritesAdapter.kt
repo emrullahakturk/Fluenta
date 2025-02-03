@@ -6,34 +6,47 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.data.model.Favorite
-import com.yargisoft.fluenta.databinding.ItemFavoritePhrasesBinding
+import com.yargisoft.fluenta.databinding.ItemPhrasesBinding
+import com.yargisoft.fluenta.usecase.TextToSpeechUseCase
 import javax.inject.Inject
 
 class PhrasesFavoritesAdapter @Inject constructor() :
     RecyclerView.Adapter<PhrasesFavoritesAdapter.FavoritePhraseViewHolder>() {
 
+    @Inject
+    lateinit var textToSpeechUseCase: TextToSpeechUseCase
+
     private var phrases: List<Favorite> = emptyList()
     private var onClickBtnRemove: ((phrase: String) -> Unit)? = null
 
-    inner class FavoritePhraseViewHolder(private val binding: ItemFavoritePhrasesBinding) :
+    inner class FavoritePhraseViewHolder(private val binding: ItemPhrasesBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(phrase: Favorite) {
-            binding.tvPhrase.text = phrase.word
-            binding.tvEnExample.text = phrase.enExample
-            binding.tvTrExample.text = phrase.trExample
-            binding.tvLevel.text = phrase.level
-            binding.tvMeaning.text = phrase.meaning
-            binding.favoriteIcon.setOnClickListener {
-                onClickBtnRemove?.invoke(phrase.word)
+            binding.apply {
+                tvPhrase.text = phrase.word
+                tvEnExample.text = phrase.enExample
+                tvTrExample.text = phrase.trExample
+                tvLevel.text = phrase.level
+                tvMeaning.text = phrase.meaning
+                favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
+                favoriteIcon.setOnClickListener {
+                    onClickBtnRemove?.invoke(phrase.word)
+                }
+                btnSpeak.setOnClickListener {
+                    val wordToSpeech = "${tvPhrase.text}  '.'   ${tvEnExample.text} "
+                    textToSpeechUseCase.speak(wordToSpeech)
+                }
             }
+
 
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritePhraseViewHolder {
         val binding =
-            ItemFavoritePhrasesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemPhrasesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return FavoritePhraseViewHolder(binding)
     }
 
