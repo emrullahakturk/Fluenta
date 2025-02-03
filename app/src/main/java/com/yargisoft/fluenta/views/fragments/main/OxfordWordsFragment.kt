@@ -103,7 +103,14 @@ class OxfordWordsFragment : Fragment() {
                 } else {
                     Toast.makeText(requireContext(), "Favorite not", Toast.LENGTH_SHORT).show()
 
-                    favoriteViewModel.addFavorite(binding.tvWord.text.toString(), "oxford_word")
+                    favoriteViewModel.addFavorite(
+                        binding.tvWord.text.toString(),
+                        "oxford_word",
+                        binding.tvLevel.text.toString(),
+                        binding.tvMeaning.text.toString(),
+                        binding.tvTrExample.text.toString(),
+                        binding.tvEnExample.text.toString()
+                    )
                     binding.favoriteIcon.setImageResource(R.drawable.ic_favorite_filled)
                 }
             }
