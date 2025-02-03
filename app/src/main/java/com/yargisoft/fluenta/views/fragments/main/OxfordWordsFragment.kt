@@ -97,9 +97,9 @@ class OxfordWordsFragment : Fragment() {
                 favoriteIcon.setOnClickListener {
                     addFavoriteUseCase.addFavorite(
                         favoriteViewModel,
+                        "oxford_word",
                         tvWord.text.toString(),
                         tvType.text.toString(),
-                        "oxford_word",
                         tvLevel.text.toString(),
                         tvMeaning.text.toString(),
                         tvTrExample.text.toString(),
