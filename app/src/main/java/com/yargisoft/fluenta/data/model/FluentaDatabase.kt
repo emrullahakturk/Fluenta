@@ -9,5 +9,5 @@ abstract class FluentaDatabase : RoomDatabase() {
     abstract fun oxfordWordDao(): OxfordWordDao
     abstract fun mostCommonWordDao(): MostCommonWordDao
     abstract fun commonPhraseDao(): CommonPhraseDao
-    abstract fun favoriteWordDao(): FavoriteWordDao
+    abstract fun favoriteDao(): FavoriteDao
 }
