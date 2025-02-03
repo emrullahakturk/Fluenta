@@ -47,7 +47,7 @@
     <string name="oxford_3000_words">Oxford 3000 A1-B2 Kelimeleri</string>
     <string name="most_common_words">En Yaygın C1-C2 Kelimeler</string>
     <string name="most_common_phrases">En Yaygın İfadeler</string>
-    <string name="translator">Çevirmen</string>
+    <string name="translator">Çeviri</string>
     <string name="favorites">Favoriler</string>
     <string name="logout">Çıkış Yap</string>
     <string name="listen_and_learn">Dinle ve Öğren</string>
@@ -67,4 +67,15 @@
     <string name="one_cikan_ozellikler">🚀 Öne Çıkan Özellikler:</string>
     <string name="list_of_about_us">✅ Oxford 3000 Kelime Listesi ile en çok kullanılan kelimeleri öğrenin.\n\n✅ Günlük Pratik Cümleler sayesinde konuşma becerilerinizi geliştirin.\n\n✅ Seslendirme Desteği ile kelimelerin doğru telaffuzlarını öğrenin.\n\n✅ Anında Çeviri Özelliği sayesinde bilmediğiniz kelimeleri hızlıca anlayın.\n\n✅ Yapay Zeka Destekli Dersler ile seviyenize uygun içerikler keşfedin.\n\n✅ Gerçek Hayattan Örnekler ile öğrendiklerinizi pekiştirin.\n\n✅ Motivasyon Mesajları ile dil öğrenme sürecinizde ilham alın.\n\n📖 Fluenta, başlangıç seviyesinden ileri düzeye kadar herkes için mükemmel bir dil öğrenme deneyimi sunar.\n\nHemen keşfetmeye başlayın ve dil becerilerinizi geliştirin! 🚀</string>
     <string name="explore">Keşfet</string>
+    <string name="blank" />
+    <string name="word_level">A2</string>
+    <string name="word_name">A piece of cake</string>
+    <string name="word_type">verb</string>
+    <string name="word_meaning">terk etmek</string>
+    <string name="word_eng_example">She had to abandon the project.</string>
+    <string name="word_tr_example">O gemiyi terk etmek zorunda</string>
+    <string name="remove_from_favorites">Remove from favorites</string>
+    <string name="oxford_favorites"><![CDATA[Oxford 3000 A1 & B2 Favoriler]]></string>
+    <string name="phrases_favorites">Favori Yaygın İfadeler</string>
+    <string name="common_words_favorites"><![CDATA[Favori C1 & C2 Kelimeler]]></string>
 </resources>
