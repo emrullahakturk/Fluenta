@@ -1,119 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    android:layout_gravity="center"
-    android:background="@android:color/white">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- Phrase (Phrase) ve Seviye (Level) -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="16dp"
+        android:background="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvPhrase"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/word_name"
+                    android:textColor="@color/app_blue"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvLevel"
+                    app:layout_constraintHorizontal_bias="0.487"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/tvLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:backgroundTint="@color/app_blue"
+                    android:padding="4dp"
+                    android:text="@string/word_level"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnSpeak"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageButton
+                    android:id="@+id/btnSpeak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:contentDescription="@string/voice_it"
+                    android:src="@drawable/ic_speaker"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/favoriteIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <ImageButton
+                    android:id="@+id/favoriteIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_favorite"
+                    android:src="@drawable/ic_favorite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5">
+
+                </ImageButton>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/tvPhrase"
-                android:layout_width="0dp"
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="A piece of cake"
-                android:textColor="@color/app_blue"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tvLevel"
-                app:layout_constraintHorizontal_bias="0.487"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                android:layout_marginTop="4dp"
+                android:text="@string/word_type"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tvLevel"
+                android:id="@+id/tvMeaning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:backgroundTint="@color/app_blue"
-                android:padding="4dp"
-                android:text="A2"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnSpeak"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5" />
+                android:layout_marginTop="8dp"
+                android:text="@string/word_meaning"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/btnSpeak"
+            <TextView
+                android:id="@+id/tvEnExample"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:contentDescription="speaker icon for speech of the text"
-                android:src="@drawable/ic_speaker"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif-italic"
+                android:text="@string/word_eng_example"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvTrExample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/word_tr_example"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
 
-          <!-- Anlam (Meaning) -->
-          <TextView
-              android:id="@+id/tvMeaning"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Çok kolay bir şey."
-              android:textSize="16sp"
-              android:layout_marginTop="8dp"
-              android:textColor="@android:color/black" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/diceLottie"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/dice_lottie"
+        app:lottie_repeatMode="restart"
+        android:foregroundGravity="center|bottom"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-
-        <!-- İngilizce Örnek (enExample) -->
-        <TextView
-            android:id="@+id/tvEnExample"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This task is a piece of cake."
-            android:textSize="14sp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="sans-serif-italic"
-            android:textColor="@android:color/darker_gray" />
-
-        <!-- Türkçe Örnek (trExample) -->
-        <TextView
-            android:id="@+id/tvTrExample"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bu görev çok kolay."
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"
-            android:textColor="@android:color/black" />
-
-        <!-- Lottie Animation (Optional) -->
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/diceLottie"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_repeatMode="restart"
-            app:lottie_rawRes="@raw/dice_lottie" />
-
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
