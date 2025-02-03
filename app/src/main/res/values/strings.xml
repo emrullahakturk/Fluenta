@@ -78,4 +78,6 @@
     <string name="oxford_favorites"><![CDATA[Oxford 3000 A1 & B2 Favoriler]]></string>
     <string name="phrases_favorites">Favori Yaygın İfadeler</string>
     <string name="common_words_favorites"><![CDATA[Favori C1 & C2 Kelimeler]]></string>
+    <string name="voice_it">Voice It</string>
+    <string name="add_favorite">Add to Favorites</string>
 </resources>
