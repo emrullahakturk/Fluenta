@@ -1,33 +1,38 @@
 package com.yargisoft.fluenta.data.repository
 
-import android.util.Log
-import android.widget.Toast
 import com.yargisoft.fluenta.data.model.Favorite
-import com.yargisoft.fluenta.data.model.FavoriteWordDao
+import com.yargisoft.fluenta.data.model.FavoriteDao
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class FavoriteRepository @Inject constructor(
-    private val favoriteWordDao: FavoriteWordDao
+    private val favoriteDao: FavoriteDao
 ) {
-    suspend fun addFavorite(word: String, category: String) {
-        favoriteWordDao.insertFavoriteWord(Favorite(word = word, category = category))
-        Log.d("FavoriteRepository", "Favorite word added: $word")
+    suspend fun addFavorite(word: String, category: String, level: String, meaning: String, trExample: String, enExample: String) {
+        favoriteDao.insertFavoriteWord(
+            Favorite(
+                word = word,
+                category = category,
+                level = level,
+                meaning = meaning,
+                trExample = trExample,
+                enExample = enExample
+            )
+        )
     }
 
     suspend fun removeFavorite(word: String, category: String) {
-        val isFavorite = favoriteWordDao.isWordFavorite(word, category)
+        val isFavorite = favoriteDao.isWordFavorite(word, category)
         if (isFavorite) {
-            favoriteWordDao.deleteFavoriteWord(word, category)
-            Log.d("FavoriteRepository", "Favorite word removed: $word")
+            favoriteDao.deleteFavoriteWord(word, category)
         }
     }
 
     fun getFavoritesByCategory(category: String): Flow<List<Favorite>> {
-        return favoriteWordDao.getFavoritesByCategory(category)
+        return favoriteDao.getFavoritesByCategory(category)
     }
 
     suspend fun isWordFavorite(word: String, category: String): Boolean {
-        return favoriteWordDao.isWordFavorite(word, category)
+        return favoriteDao.isWordFavorite(word, category)
     }
 }

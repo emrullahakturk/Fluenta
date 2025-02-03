@@ -26,9 +26,9 @@ class FavoriteViewModel @Inject constructor(
         }
     }
 
-    fun addFavorite(word: String, category: String) {
+    fun addFavorite(word: String, category: String, level: String, meaning: String, trExample: String, enExample: String) {
         viewModelScope.launch {
-            repository.addFavorite(word, category)
+            repository.addFavorite(word, category, level, meaning, trExample, enExample)
         }
     }
 
