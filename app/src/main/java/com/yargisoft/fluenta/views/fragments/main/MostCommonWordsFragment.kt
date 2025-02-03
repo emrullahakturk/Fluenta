@@ -40,58 +40,65 @@ class MostCommonWordsFragment @Inject constructor() : Fragment() {
         _binding = FragmentMostCommonWordsBinding.inflate(inflater, container, false)
         viewModel.loadRandomMostCommonWord()
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.word.collect { word ->
-                    binding.apply {
-                        tvWord.text = word?.word
-                        tvType.text = word?.type
-                        tvLevel.text = word?.level
-                        tvMeaning.text = word?.meaning
-                        tvEnExample.text = word?.enExample
-                        tvTrExample.text = word?.trExample
+
+        binding.apply {
+
+            item.apply {
+
+                binding.diceLottie.setOnClickListener {
+                    viewModel.ttsStop()
+                    btnSpeak.isClickable = false
+                    if (!binding.diceLottie.isAnimating) {
+                        binding.diceLottie.playAnimation()
+                        CoroutineScope(Dispatchers.Main).launch {
+                            viewModel.loadRandomMostCommonWord()
+                            repeat(10) {
+                                delay(200)
+                                viewModel.loadRandomMostCommonWord()
+                            }
+                            binding.item.btnSpeak.isClickable = true
+                        }
+
                     }
                 }
-            }
-        }
 
-        binding.diceLottie.setOnClickListener {
-            viewModel.ttsStop()
-            binding.btnSpeak.isClickable = false
-            if (!binding.diceLottie.isAnimating) {
-                binding.diceLottie.playAnimation()
-                CoroutineScope(Dispatchers.Main).launch {
-                    viewModel.loadRandomMostCommonWord()
-                    repeat(10) {
-                        delay(200)
-                        viewModel.loadRandomMostCommonWord()
+                viewLifecycleOwner.lifecycleScope.launch {
+                    viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                        viewModel.word.collect { word ->
+
+                            tvWord.text = word?.word
+                            tvType.text = word?.type
+                            tvLevel.text = word?.level
+                            tvMeaning.text = word?.meaning
+                            tvEnExample.text = word?.enExample
+                            tvTrExample.text = word?.trExample
+
+                        }
                     }
-                    binding.btnSpeak.isClickable = true
                 }
 
+                btnSpeak.setOnClickListener {
+                    val word = "${tvWord.text}  '.'   ${tvEnExample.text} "
+                    viewModel.ttsSpeak(word, requireContext())
+                    Toast.makeText(requireContext(), tvWord.text.toString(), Toast.LENGTH_SHORT)
+                        .show()
+                }
+
+                favoriteIcon.setOnClickListener {
+                    addFavoriteUseCase.addFavorite(
+                        favoriteViewModel,
+                        "common_words",
+                        tvWord.text.toString(),
+                        tvType.text.toString(),
+                        tvLevel.text.toString(),
+                        tvMeaning.text.toString(),
+                        tvTrExample.text.toString(),
+                        tvEnExample.text.toString(),
+                        favoriteIcon
+                    )
+                }
             }
-        }
 
-        binding.btnSpeak.setOnClickListener {
-            val word = "${binding.tvWord.text}  '.'   ${binding.tvEnExample.text} "
-            viewModel.ttsSpeak(word, requireContext())
-            Toast.makeText(requireContext(), binding.tvWord.text.toString(), Toast.LENGTH_SHORT)
-                .show()
-        }
-
-
-        binding.favoriteIcon.setOnClickListener {
-            addFavoriteUseCase.addFavorite(
-                favoriteViewModel,
-                "common_words",
-                binding.tvWord.text.toString(),
-                binding.tvType.text.toString(),
-                binding.tvLevel.text.toString(),
-                binding.tvMeaning.text.toString(),
-                binding.tvTrExample.text.toString(),
-                binding.tvEnExample.text.toString(),
-                binding.favoriteIcon
-            )
         }
 
         return binding.root
