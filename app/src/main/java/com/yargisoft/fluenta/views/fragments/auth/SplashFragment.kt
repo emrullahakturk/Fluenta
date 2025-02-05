@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.yargisoft.fluenta.R
@@ -18,6 +19,7 @@ import javax.inject.Inject
 class SplashFragment  @Inject constructor(): Fragment() {
 
     private lateinit var binding: FragmentSplashBinding
+    private val navOptions = NavOptions.Builder().setPopUpTo(R.id.splashFragment, true).build()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,10 +45,10 @@ class SplashFragment  @Inject constructor(): Fragment() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             // Kullanıcı oturum açmış, Home sayfasına yönlendir
-            findNavController().navigate(R.id.splashToQuote)
+            findNavController().navigate(R.id.splashToQuote, null, navOptions)
         } else {
             // Kullanıcı oturum açmamış, FirstPage'e yönlendir
-            findNavController().navigate(R.id.splashToWelcome)
+            findNavController().navigate(R.id.splashToWelcome, null, navOptions)
         }
     }
 }
