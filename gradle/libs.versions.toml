@@ -19,6 +19,7 @@ kotlin = "2.0.20"
 ksp = "2.0.20-1.0.24"
 hilt = "2.51"
 room = "2.6.1"
+dataStore="1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,6 +46,7 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 
 
 

@@ -73,7 +73,9 @@ dependencies {
     implementation(libs.retrofit)
 
     implementation(libs.kotlin.stdlib)
-    ksp(libs.hilt.compiler) 
+    ksp(libs.hilt.compiler)
+
+    implementation(libs.data.store)
 }
 
 ksp {
