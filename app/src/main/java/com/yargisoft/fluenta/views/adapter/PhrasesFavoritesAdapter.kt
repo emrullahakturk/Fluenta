@@ -86,4 +86,8 @@ class PhrasesFavoritesAdapter @Inject constructor() :
             return oldList[oldItemPosition] == newList[newItemPosition]
         }
     }
+
+    fun ttsStop(){
+        textToSpeechUseCase.stop()
+    }
 }

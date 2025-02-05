@@ -57,8 +57,15 @@ class FavoritePhrasesFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
+        adapter.ttsStop()
         _binding = null
     }
+
+    override fun onStop() {
+        super.onStop()
+        adapter.ttsStop()
+    }
+
 }

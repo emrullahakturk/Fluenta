@@ -113,4 +113,16 @@ class OxfordWordsFragment : Fragment() {
             return root
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewModel.ttsStop()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.ttsStop()
+    }
+
+
 }

@@ -86,5 +86,8 @@ class OxfordFavoritesAdapter @Inject constructor() :
         }
     }
 
+    fun ttsStop(){
+        textToSpeechUseCase.stop()
+    }
 
 }
