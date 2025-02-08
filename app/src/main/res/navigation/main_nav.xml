@@ -98,17 +98,17 @@
         android:id="@+id/myAccountFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.MyAccountFragment"
         android:label="fragment_my_account"
-        tools:layout="@layout/fragment_my_account" />
+        tools:layout="@layout/fragment_my_account" >
+        <action
+            android:id="@+id/accountToAuthNav"
+            app:destination="@id/auth_nav" />
+    </fragment>
     <fragment
         android:id="@+id/oxfordWordsFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.OxfordWordsFragment"
         android:label="fragment_oxford_words"
         tools:layout="@layout/fragment_oxford_words" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.yargisoft.fluenta.views.fragments.main.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+
     <fragment
         android:id="@+id/translatorFragment"
         android:name="com.yargisoft.fluenta.views.fragments.main.TranslatorFragment"
@@ -134,4 +134,5 @@
         android:name="com.yargisoft.fluenta.views.fragments.favorites.FavoritePhrasesFragment"
         android:label="fragment_favorite_phrases"
         tools:layout="@layout/fragment_favorite_phrases" />
+    <include app:graph="@navigation/auth_nav" />
 </navigation>
