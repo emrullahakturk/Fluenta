@@ -80,4 +80,6 @@
     <string name="common_words_favorites"><![CDATA[Favori C1 & C2 Kelimeler]]></string>
     <string name="voice_it">Voice It</string>
     <string name="add_favorite">Add to Favorites</string>
+    <string name="home">Ana Sayfa</string>
+    <string name="search">Arama</string>
 </resources>
