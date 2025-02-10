@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.yargisoft.fluenta.R
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navHostNavController: NavController
     private lateinit var toolbar: Toolbar
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var bottomNav: BottomNavigationView
 
     @Inject
     lateinit var firebaseAuth: FirebaseAuth
@@ -56,6 +58,8 @@ class MainActivity : AppCompatActivity() {
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         navHostNavController = navHostFragment.navController
+        bottomNav = binding.bottomNavigation
+        bottomNav.setupWithNavController(navHostFragment.navController)
 
         toolbar = binding.toolbar
         setSupportActionBar(toolbar)
