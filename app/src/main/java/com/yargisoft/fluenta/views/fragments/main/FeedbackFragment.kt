@@ -1,60 +1,78 @@
 package com.yargisoft.fluenta.views.fragments.main
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.yargisoft.fluenta.R
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.yargisoft.fluenta.databinding.FragmentFeedbackBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FeedbackFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class FeedbackFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentFeedbackBinding? = null
+    private val binding get() = _binding!!
+    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feedback, container, false)
+    ): View {
+        _binding = FragmentFeedbackBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FeedbackFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FeedbackFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view,savedInstanceState)
+
+        // Firebase'den kullanıcı bilgilerini al
+        val user = auth.currentUser
+        val userEmail = user?.email ?: "E-posta bulunamadı"
+        val userName = user?.displayName ?: "Anonim Kullanıcı"
+
+        binding.btnSendFeedback.setOnClickListener {
+            sendFeedbackEmail(userName, userEmail)
+        }
+    }
+
+    private fun sendFeedbackEmail(userName: String, userEmail: String) {
+        val subject = binding.etSubject.text.toString().trim()
+        val message = binding.etMessage.text.toString().trim()
+
+        if (subject.isEmpty() || message.isEmpty()) {
+            Toast.makeText(requireContext(), "Lütfen konu ve mesaj alanlarını doldurun.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val recipient = "support@fluentaapp.com" // Geri bildirim e-posta adresi
+
+        val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(recipient))
+            putExtra(Intent.EXTRA_SUBJECT, "Fluenta Geri Bildirim - $subject")
+            putExtra(Intent.EXTRA_TEXT, """
+                Kullanıcı Adı: $userName
+                Kullanıcı E-Postası: $userEmail
+                
+                Mesaj:
+                $message
+            """.trimIndent())
+        }
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "E-posta gönder"))
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "E-posta gönderimi desteklenmiyor.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
