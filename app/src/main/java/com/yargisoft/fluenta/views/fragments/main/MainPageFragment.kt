@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.databinding.FragmentMainPageBinding
 import com.yargisoft.fluenta.viewmodel.MainPageViewModel
@@ -22,18 +24,18 @@ class MainPageFragment @Inject constructor() : Fragment() {
 
 
     private val navigationActions: Map<String, Int> = mapOf(
-        "main_to_about_us" to R.id.main_to_about_us,
-        "main_to_ai_tutor" to R.id.main_to_ai_tutor,
-        "main_to_favorites" to R.id.main_to_favorites,
-        "main_to_feedback" to R.id.main_to_feedback,
-        "main_to_listen_and_learn" to R.id.main_to_listen_and_learn,
-        "main_to_most_common_phrases" to R.id.main_to_most_common_phrases,
-        "main_to_most_common_words" to R.id.main_to_most_common_words,
-        "main_to_my_account" to R.id.main_to_my_account,
-        "main_to_oxford" to R.id.main_to_oxford,
-        "main_to_settings" to R.id.main_to_settings,
-        "main_to_translator" to R.id.main_to_translator,
-        "main_to_upgrade_pro" to R.id.main_to_upgrade_pro
+        "main_to_about_us" to R.id.aboutUsFragment,
+        "main_to_ai_tutor" to R.id.aiTutorFragment,
+        "main_to_favorites" to R.id.favoritesFragment,
+        "main_to_feedback" to R.id.feedbackFragment,
+        "main_to_listen_and_learn" to R.id.listenAndLearnFragment,
+        "main_to_most_common_phrases" to R.id.mostCommonPhrasesFragment,
+        "main_to_most_common_words" to R.id.mostCommonWordsFragment,
+        "main_to_my_account" to R.id.myAccountFragment,
+        "main_to_oxford" to R.id.oxfordWordsFragment,
+        "main_to_settings" to R.id.settingsFragment,
+        "main_to_translator" to R.id.translatorFragment,
+        "main_to_upgrade_pro" to R.id.upgradeProFragment
     )
 
 
@@ -55,7 +57,7 @@ class MainPageFragment @Inject constructor() : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = adapter
 
         viewLifecycleOwner.lifecycleScope.launch {

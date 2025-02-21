@@ -82,4 +82,7 @@
     <string name="add_favorite">Add to Favorites</string>
     <string name="home">Ana Sayfa</string>
     <string name="search">Arama</string>
+    <string name="feedback_topic">Geri Bildirim Konusu</string>
+    <string name="feedback_content">Geri Bildiriminizi Yazın</string>
+    <string name="feedback_button">Geri Bildirimi Gönder</string>
 </resources>

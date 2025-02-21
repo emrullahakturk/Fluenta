@@ -1,5 +1,6 @@
 package com.yargisoft.fluenta.views.fragments.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.yargisoft.fluenta.R
 import com.yargisoft.fluenta.databinding.FragmentMyAccountBinding
+import com.yargisoft.fluenta.views.activities.AuthActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -20,7 +22,7 @@ class MyAccountFragment @Inject constructor() : Fragment() {
 
 
     private val navOptions = NavOptions.Builder()
-        .setPopUpTo(R.id.main_nav, true) // Main Graph'taki tüm fragmentleri temizler
+        .setPopUpTo(R.id.auth_nav, true) // Main Graph'taki tüm fragmentleri temizler
         .build()
 
 
@@ -51,7 +53,9 @@ class MyAccountFragment @Inject constructor() : Fragment() {
 
         binding.btnLogout.setOnClickListener {
             auth.signOut()
-            findNavController().navigate(R.id.auth_nav, null, navOptions) // Auth Graph'a yönlendir
+            val intent = Intent(requireContext(), AuthActivity::class.java)
+            startActivity(intent)
+           // findNavController().navigate(R.id.auth_nav, null, navOptions) // Auth Graph'a yönlendir
         }
 
         binding.btnDeleteAccount.setOnClickListener {
