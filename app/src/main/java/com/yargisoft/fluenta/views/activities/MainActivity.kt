@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        "Hello, ${firebaseAuth.currentUser?.displayName?.substringBefore(" ")}".also { binding.toolbarTitle.text = it }
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
