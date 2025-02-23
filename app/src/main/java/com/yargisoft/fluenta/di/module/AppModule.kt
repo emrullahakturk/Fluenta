@@ -18,6 +18,7 @@ object AppModule {
     fun provideMainPageItems(): List<MainPageMenuItem> {
         return listOf(
             MainPageMenuItem("main_to_oxford", R.drawable.oxford),
+            MainPageMenuItem("main_to_story", R.drawable.story_mode),
             MainPageMenuItem("main_to_most_common_words", R.drawable.most_common_c1_c2),
             MainPageMenuItem("main_to_most_common_phrases", R.drawable.most_common_phrases),
             MainPageMenuItem("main_to_listen_and_learn", R.drawable.listen_and_learn),

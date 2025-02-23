@@ -35,7 +35,8 @@ class MainPageFragment @Inject constructor() : Fragment() {
         "main_to_oxford" to R.id.oxfordWordsFragment,
         "main_to_settings" to R.id.settingsFragment,
         "main_to_translator" to R.id.translatorFragment,
-        "main_to_upgrade_pro" to R.id.upgradeProFragment
+        "main_to_upgrade_pro" to R.id.upgradeProFragment,
+        "main_to_story" to R.id.storyFragment
     )
 
 
