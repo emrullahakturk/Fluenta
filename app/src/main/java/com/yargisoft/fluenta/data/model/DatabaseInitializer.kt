@@ -14,7 +14,7 @@ class DatabaseInitializer @Inject constructor(
     private val oxfordWordDao: OxfordWordDao,
     private val mostCommonWordDao: MostCommonWordDao,
     private val commonPhraseDao: CommonPhraseDao,
-    private val c1C2Dao: C1C2Dao,
+    private val storyDao: StoryDao,
     ) {
 
     suspend fun quoteInitializer() = withContext(Dispatchers.IO) {
@@ -46,9 +46,9 @@ class DatabaseInitializer @Inject constructor(
     }
 
     suspend fun c1C2Initializer() = withContext(Dispatchers.IO) {
-        val json = context.assets.open("c1_c2_stories.json").bufferedReader().use { it.readText() }
-        val story: List<C1C2Story> =
-            Gson().fromJson(json, object : TypeToken<List<C1C2Story>>() {}.type)
-        c1C2Dao.insertAll(story)
+        val json = context.assets.open("stories.json").bufferedReader().use { it.readText() }
+        val story: List<Story> =
+            Gson().fromJson(json, object : TypeToken<List<Story>>() {}.type)
+        storyDao.insertAll(story)
     }
 }

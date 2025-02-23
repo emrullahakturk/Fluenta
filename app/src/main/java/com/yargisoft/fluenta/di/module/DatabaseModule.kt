@@ -2,7 +2,7 @@ package com.yargisoft.fluenta.di.module
 
 import android.content.Context
 import androidx.room.Room
-import com.yargisoft.fluenta.data.model.C1C2Dao
+import com.yargisoft.fluenta.data.model.StoryDao
 import com.yargisoft.fluenta.data.model.CommonPhraseDao
 import com.yargisoft.fluenta.data.model.DatabaseInitializer
 import com.yargisoft.fluenta.data.model.FavoriteDao
@@ -57,7 +57,7 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideFavoriteC1C2Dao(database: FluentaDatabase): C1C2Dao {
+    fun provideFavoriteC1C2Dao(database: FluentaDatabase): StoryDao {
         return database.c1C2Dao()
     }
 
@@ -69,7 +69,7 @@ object DatabaseModule {
         mostCommonWordDao: MostCommonWordDao,
         oxfordWordDao: OxfordWordDao,
         commonPhraseDao: CommonPhraseDao,
-        c1C2Dao: C1C2Dao
+        storyDao: StoryDao
     ): DatabaseInitializer {
         return DatabaseInitializer(
             context,
@@ -77,7 +77,7 @@ object DatabaseModule {
             oxfordWordDao,
             mostCommonWordDao,
             commonPhraseDao,
-            c1C2Dao
+            storyDao
         )
     }
 
