@@ -92,4 +92,5 @@
     <string name="story_title">Hikaye Başlığı</string>
     <string name="story_content">Hikaye içeriği burada görünecek...</string>
     <string name="create_a_new_story">Yeni Hikaye Üret</string>
+    <string name="story_mode">Story Mode</string>
 </resources>

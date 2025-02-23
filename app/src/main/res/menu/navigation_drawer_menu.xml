@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <item
-        android:id="@+id/oxfordWordsFragment"
-        android:icon="@drawable/ic_oxford_3000_words"
-        android:title="@string/oxford_3000_words" />
     <item
         android:id="@+id/mainPageFragment"
         android:icon="@drawable/ic_home"
         android:title="@string/main_page" />
+    <item
+        android:id="@+id/oxfordWordsFragment"
+        android:icon="@drawable/ic_oxford_3000_words"
+        android:title="@string/oxford_3000_words" />
+
+    <item
+        android:id="@+id/storyFragment"
+        android:icon="@drawable/ic_story"
+        android:title="@string/story_mode" />
 
     <item
         android:id="@+id/mostCommonWordsFragment"
