@@ -85,4 +85,11 @@
     <string name="feedback_topic">Geri Bildirim Konusu</string>
     <string name="feedback_content">Geri Bildiriminizi Yazın</string>
     <string name="feedback_button">Geri Bildirimi Gönder</string>
+    <string name="select_story_level">Hikaye Seviyesini Seçin:</string>
+    <string name="a1_a2">A1-A2</string>
+    <string name="b1_b2">B1-B2</string>
+    <string name="c1_c2">C1-C2</string>
+    <string name="story_title">Hikaye Başlığı</string>
+    <string name="story_content">Hikaye içeriği burada görünecek...</string>
+    <string name="create_a_new_story">Yeni Hikaye Üret</string>
 </resources>
