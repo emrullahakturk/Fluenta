@@ -11,14 +11,14 @@ import javax.inject.Inject
 class MainPageMenuAdapter @Inject constructor() : RecyclerView.Adapter<MainPageMenuAdapter.MainPageViewHolder>() {
 
     private var items: List<MainPageMenuItem> = emptyList()
-    private var onItemClick: ((MainPageMenuItem) -> Unit)? = null
+    private var onItemClick: ((Int) -> Unit)? = null
 
     inner class MainPageViewHolder(private val binding: ItemMainPageMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MainPageMenuItem) {
            // binding.tvTitle.text = item.title
             binding.ivIcon.setImageResource(item.iconResId)
-            binding.root.setOnClickListener { onItemClick?.invoke(item) }
+            binding.root.setOnClickListener { onItemClick?.invoke(item.destinationId) }
         }
     }
 
@@ -38,7 +38,7 @@ class MainPageMenuAdapter @Inject constructor() : RecyclerView.Adapter<MainPageM
     override fun getItemCount(): Int = items.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateData(newItems: List<MainPageMenuItem>, onItemClick: (MainPageMenuItem) -> Unit) {
+    fun updateData(newItems: List<MainPageMenuItem>, onItemClick: (Int) -> Unit) {
         items = newItems
         this.onItemClick = onItemClick
         notifyDataSetChanged()

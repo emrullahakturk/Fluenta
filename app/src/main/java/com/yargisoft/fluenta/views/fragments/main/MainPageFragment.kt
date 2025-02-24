@@ -22,22 +22,25 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainPageFragment @Inject constructor() : Fragment() {
 
+/*
 
     private val navigationActions: Map<String, Int> = mapOf(
-        "main_to_about_us" to R.id.aboutUsFragment,
-        "main_to_ai_tutor" to R.id.aiTutorFragment,
-        "main_to_favorites" to R.id.favoritesFragment,
-        "main_to_feedback" to R.id.feedbackFragment,
-        "main_to_listen_and_learn" to R.id.listenAndLearnFragment,
-        "main_to_most_common_phrases" to R.id.mostCommonPhrasesFragment,
-        "main_to_most_common_words" to R.id.mostCommonWordsFragment,
-        "main_to_my_account" to R.id.myAccountFragment,
         "main_to_oxford" to R.id.oxfordWordsFragment,
-        "main_to_settings" to R.id.settingsFragment,
+        "main_to_story" to R.id.storyFragment,
+        "main_to_most_common_words" to R.id.mostCommonWordsFragment,
+        "main_to_most_common_phrases" to R.id.mostCommonPhrasesFragment,
+        "main_to_listen_and_learn" to R.id.listenAndLearnFragment,
+        "main_to_ai_tutor" to R.id.aiTutorFragment,
         "main_to_translator" to R.id.translatorFragment,
+        "main_to_favorites" to R.id.favoritesFragment,
+        "main_to_my_account" to R.id.myAccountFragment,
+
+        "main_to_about_us" to R.id.aboutUsFragment,
+        "main_to_feedback" to R.id.feedbackFragment,
+        "main_to_settings" to R.id.settingsFragment,
         "main_to_upgrade_pro" to R.id.upgradeProFragment,
-        "main_to_story" to R.id.storyFragment
     )
+*/
 
 
     @Inject
@@ -64,7 +67,7 @@ class MainPageFragment @Inject constructor() : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.mainPageItems.collect { items ->
                 adapter.updateData(items) { item ->
-                    navigationActions[item.destination]?.let { findNavController().navigate(it) }
+                    findNavController().navigate(item)
                 }
             }
         }

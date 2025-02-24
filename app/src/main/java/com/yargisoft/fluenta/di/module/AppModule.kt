@@ -17,15 +17,15 @@ object AppModule {
     @Singleton
     fun provideMainPageItems(): List<MainPageMenuItem> {
         return listOf(
-            MainPageMenuItem("main_to_oxford", R.drawable.oxford),
-            MainPageMenuItem("main_to_story", R.drawable.story_mode),
-            MainPageMenuItem("main_to_most_common_words", R.drawable.most_common_c1_c2),
-            MainPageMenuItem("main_to_most_common_phrases", R.drawable.most_common_phrases),
-            MainPageMenuItem("main_to_listen_and_learn", R.drawable.listen_and_learn),
-            MainPageMenuItem("main_to_ai_tutor", R.drawable.ai_tutor),
-            MainPageMenuItem("main_to_translator", R.drawable.translator),
-            MainPageMenuItem("main_to_favorites", R.drawable.favorites),
-            MainPageMenuItem("main_to_my_account", R.drawable.account),
+            MainPageMenuItem(R.id.oxfordWordsFragment, R.drawable.oxford),
+            MainPageMenuItem(R.id.storyFragment, R.drawable.story_mode),
+            MainPageMenuItem(R.id.mostCommonWordsFragment, R.drawable.most_common_c1_c2),
+            MainPageMenuItem(R.id.mostCommonPhrasesFragment, R.drawable.most_common_phrases),
+            MainPageMenuItem(R.id.listenAndLearnFragment, R.drawable.listen_and_learn),
+            MainPageMenuItem(R.id.aiTutorFragment, R.drawable.ai_tutor),
+            MainPageMenuItem(R.id.translatorFragment,  R.drawable.translator),
+            MainPageMenuItem(R.id.favoritesFragment, R.drawable.favorites),
+            MainPageMenuItem(R.id.myAccountFragment, R.drawable.account),
 
         )
     }
