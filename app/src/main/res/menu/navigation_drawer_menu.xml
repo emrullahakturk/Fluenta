@@ -39,18 +39,12 @@
         android:id="@+id/favoritesFragment"
         android:icon="@drawable/ic_favorite"
         android:title="@string/favorites" />
-    <item
-        android:id="@+id/upgradeProFragment"
-        android:icon="@drawable/ic_upgrade_pro"
-        android:title="@string/upgrade_pro" />
+
     <item
         android:id="@+id/myAccountFragment"
         android:icon="@drawable/ic_account"
         android:title="@string/my_account" />
-    <item
-        android:id="@+id/settingsFragment"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/settings" />
+
     <item
         android:id="@+id/feedbackFragment"
         android:icon="@drawable/ic_feedback"
