@@ -74,15 +74,11 @@
         <action
             android:id="@+id/main_to_oxford"
             app:destination="@id/oxfordWordsFragment" />
-        <action
-            android:id="@+id/main_to_settings"
-            app:destination="@id/settingsFragment" />
+
         <action
             android:id="@+id/main_to_translator"
             app:destination="@id/translatorFragment" />
-        <action
-            android:id="@+id/main_to_upgrade_pro"
-            app:destination="@id/upgradeProFragment" />
+
         <action
             android:id="@+id/main_to_story"
             app:destination="@id/storyFragment" />
@@ -117,11 +113,6 @@
         android:name="com.yargisoft.fluenta.views.fragments.main.TranslatorFragment"
         android:label="fragment_translator"
         tools:layout="@layout/fragment_translator" />
-    <fragment
-        android:id="@+id/upgradeProFragment"
-        android:name="com.yargisoft.fluenta.views.fragments.main.UpgradeProFragment"
-        android:label="fragment_upgrade_pro"
-        tools:layout="@layout/fragment_upgrade_pro" />
     <fragment
         android:id="@+id/favoriteCommonWordFragment"
         android:name="com.yargisoft.fluenta.views.fragments.favorites.FavoriteCommonWordFragment"
