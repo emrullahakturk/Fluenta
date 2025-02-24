@@ -14,6 +14,7 @@
         app:strokeColor="@color/app_blue"
         app:strokeWidth="1dp"
         android:padding="24dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintWidth_percent="0.9"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,42 +40,36 @@
                 android:layout_marginTop="20dp"
                 android:paddingBottom="8dp" />
 
-            <!-- Geri Bildirim Konusu -->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilSubject"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                android:id="@+id/feedbackTextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/text_input_gray"
                 android:hint="@string/feedback_topic"
-                app:boxBackgroundMode="filled"
-                app:boxCornerRadiusTopStart="12dp"
-                app:boxCornerRadiusTopEnd="12dp"
-                app:boxCornerRadiusBottomStart="12dp"
-                app:boxCornerRadiusBottomEnd="12dp"
-                app:endIconMode="none"
-                android:layout_marginTop="8dp">
+                app:boxBackgroundColor="@color/text_input_gray"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
+                app:endIconMode="none">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etSubject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:background="@null"/>
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Açıklama -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilMessage"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/feedback_content"
-                app:boxBackgroundMode="filled"
-                app:boxCornerRadiusTopStart="12dp"
-                app:boxCornerRadiusTopEnd="12dp"
-                app:boxCornerRadiusBottomStart="12dp"
-                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
                 app:endIconMode="none"
                 android:layout_marginTop="8dp">
 
@@ -83,10 +78,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
-                    android:minHeight="200dp"
-                    android:maxLines="10"
-                    android:textColor="@color/black"
-                    android:background="@null"/>
+                    android:minHeight="250dp"
+                    android:maxLines="15"
+                    android:textColor="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Gönder Butonu -->
