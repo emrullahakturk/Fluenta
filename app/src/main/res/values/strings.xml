@@ -93,4 +93,10 @@
     <string name="story_content">Hikaye içeriği burada görünecek...</string>
     <string name="create_a_new_story">Yeni Hikaye Üret</string>
     <string name="story_mode">Story Mode</string>
+    <string name="swap_button">Swap button</string>
+    <string name="source_text">Çevrilecek metni girin</string>
+    <string name="translated_text">Çeviri..</string>
+    <string name="translate">Çevir</string>
+    <string name="turkish">Türkçe</string>
+    <string name="English">İngilizce</string>
 </resources>
