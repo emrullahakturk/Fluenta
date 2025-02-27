@@ -30,11 +30,17 @@ class TranslatorFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view,savedInstanceState)
+        super.onViewCreated(view, savedInstanceState)
 
         binding.btnTranslate.setOnClickListener {
-            val text = binding.etInputText.text.toString()
-            viewModel.translate(text, "en", "tr") // İngilizceden Türkçeye çeviri
+            val text = binding.etTextToTranslate.text.toString()
+            viewModel.translate(text)
+        }
+
+        binding.btnSwapLanguages.setOnClickListener {
+            val text = binding.etTextToTranslate.text.toString()
+            viewModel.swapLanguages(text)
+            swapUI()
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -44,8 +50,13 @@ class TranslatorFragment : Fragment() {
                 }
             }
         }
-        }
+    }
 
+    private fun swapUI() {
+        val tempText = binding.tvSourceLanguage.text
+        binding.tvSourceLanguage.text = binding.tvTargetLanguage.text
+        binding.tvTargetLanguage.text = tempText
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
